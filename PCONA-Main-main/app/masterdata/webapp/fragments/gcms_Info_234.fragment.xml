@@ -1,0 +1,304 @@
+<core:FragmentDefinition
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <VBox>
+      
+          <fb:FilterBar
+                        id="id_fb_Info234"
+                        persistencyKey="myPersKey_Info234"
+                        useToolbar="false"
+                        search="onGoToReport_Info234"
+                        showClearOnFB="true"
+                        clear="onClear234"
+                        filterChange=".onFilterChange_Info234"
+                        afterVariantLoad=".onAfterVariantLoad_Info234"
+                    >
+                        <fb:filterGroupItems>
+                            <!-- <fb:FilterGroupItem
+                                name="Client Info234"
+                                label="{i18n>client}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                        <MultiInput
+                                        id="id_Info234_Client"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenClientFragment_Info234"
+                                        placeholder="{i18n>Client}"
+                                        tokenUpdate="onTokenClientChange_Info234"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> -->
+
+                            <fb:FilterGroupItem
+                                name="Record Type Info234"
+                                label="{i18n>Record_Type}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info234_record_type"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenrecord_typeFragment_Info234"
+                                        placeholder="{i18n>Record_Type}"
+                                        tokenUpdate="onTokenrecord_typeChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Reply ID nfo234"
+                                label="{i18n>Reply_ID}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info234_reply_id"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenreply_idFragment_Info234"
+                                        placeholder="{i18n>Reply_ID}"
+                                        tokenUpdate="onTokenreply_idChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Sales Order Code Info234"
+                                label="{i18n>Sales_Order_Code}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info234_sales_order_code"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpensales_order_codeFragment_Info234"
+                                        placeholder="{i18n>Sales_Order_Code}"
+                                        tokenUpdate="onTokenIssueDateChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                               <fb:FilterGroupItem
+                                name="Issued Date Info234"
+                                label="{i18n>Issued_Date}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                     <MultiInput
+                                        id="id_Info234_issued_date"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenissued_dateFragment_Info234"
+                                        placeholder="{i18n>Issued_Date}"
+                                        tokenUpdate="onTokenissued_dateChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Unified Model Number Info234"
+                                label="{i18n>Unified_Model_Number}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info234_unified_model_number"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenunified_model_numberFragment_Info234"
+                                        placeholder="{i18n>Unified_Model_Number}"
+                                        tokenUpdate="onTokenUniModNoChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Suplier Code Info234"
+                                label="{i18n>Suplier_Code}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                     <MultiInput
+                                        id="id_Info234_suplier_code"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpensuplier_codeFragment_Info234"
+                                        placeholder="{i18n>Suplier_Code}"
+                                        tokenUpdate="onTokensuplier_codeChange_Info234"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                             <fb:FilterGroupItem
+                                name="Created On"
+                                label="{i18n>Created_On}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_9"
+                                        placeholder="Created On"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeCreateDateInfo234"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed_On}"
+                                groupName="Group_Info234"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_10"
+                                        placeholder="Changed On"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeDateInfo234"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> 
+
+
+                           
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+         	<ScrollContainer
+		height="100%"
+		width="100%"
+		vertical="true"
+        horizontal="true"
+		focusable="true">
+<content>
+        <Table
+            id="idInfo_234_Table"
+            inset="false"
+           items="{Info234_Model>/}"
+            columns="{columndataInfo234>/Result}"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title
+                            text="{i18n>ModelDescriptions}"
+                            level="H2"
+                        />
+                              <ToolbarSpacer />
+
+                                 <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleInfo_234_SortButtonPressed"
+                                    />
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="on234Export"
+                                    />
+
+                                    <MultiComboBox
+                                        placeholder="{i18n>show_hidecolumns}"
+                                        selectionChange="handle234SelectionChange"
+                                        selectionFinish="handle234SelectionFinish"
+                                        width="30%"
+                                        items="{columndataInfo234>/Result}"
+                                        id="id_showHideColumns234"
+                                    >
+                                  
+                                        <core:Item  key="{columndataInfo234>okey}"  text="{columndataInfo234>otext}" />
+                                       
+                                    </MultiComboBox>
+                    </content>
+               
+            </OverflowToolbar>
+			 </headerToolbar>
+            <columns>
+               <Column 
+                styleClass="{columndataInfo234>okey}"
+                visible="{columndataInfo234>visible}"
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    width="{columndataInfo234>width}"
+                >
+                    <Text text="{columndataInfo234>otext}" />
+                </Column>
+                
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <!-- <Text text="{Info234_Model>client}" /> -->
+                        <Text text="{Info234_Model>record_type}" />
+                        <Text text="{Info234_Model>reply_id}" />
+                        <Text text="{Info234_Model>sales_order_code}" />
+                        <Text text="{Info234_Model>issued_date}" />
+                        <Text text="{Info234_Model>unified_model_number}" />
+                        <Text text="{Info234_Model>suplier_code}" />
+                        <Text text="{Info234_Model>description_1}" />
+                        <Text text="{Info234_Model>description_2}" />
+                        <Text text="{Info234_Model>description_3}" />
+                        <Text text="{Info234_Model>description_4}" />
+                        <Text text="{Info234_Model>description_5}" />
+                        <Text text="{Info234_Model>description_6}" />
+                        <Text text="{Info234_Model>description_7}" />
+                        <Text text="{Info234_Model>filler}" />
+                        <Text text="{Info234_Model>revised_id}" />
+                        <Text text="{Info234_Model>filler_2}" />
+                        <Text text="{Info234_Model>printer_spec_8}" />
+                        <Text text="{Info234_Model>printer_spec_9}" />
+                        <Text text="{Info234_Model>printer_spec_10}" />
+                        <Text text="{Info234_Model>printer_spec_11}" />
+                        <Text text="{Info234_Model>printer_spec_12}" />
+                        <Text text="{Info234_Model>printer_spec_13}" />
+                        <Text text="{Info234_Model>printer_spec_14}" />
+                        <Text text="{Info234_Model>revised_id_3}" />
+                        <Text text="{Info234_Model>filler_3}" />
+                        <Text text="{Info234_Model>printer_spec_15}" />
+                        <Text text="{Info234_Model>printer_spec_16}" />
+                        <Text text="{Info234_Model>printer_spec_17}" />
+                        <Text text="{Info234_Model>printer_spec_18}" />
+                        <Text text="{Info234_Model>printer_spec_19}" />
+                        <Text text="{Info234_Model>printer_spec_20}" />
+                        <Text text="{Info234_Model>filler_4}" />
+                        <Text text="{Info234_Model>revised_id_4}" />
+                        <Text text="{Info234_Model>filler_5}" />
+                        <Text text="{Info234_Model>delete_indicator}" />
+                        <Text text="{Info234_Model>created_on}" />
+                        <Text text="{Info234_Model>changed_on}" />
+                        <Text text="{Info234_Model>change_time}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </content>
+        	</ScrollContainer>
+    </VBox>
+</core:FragmentDefinition>

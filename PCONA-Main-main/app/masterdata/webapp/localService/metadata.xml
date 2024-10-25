@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="mdg_Srv" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="zplink" EntityType="mdg_Srv.zplink"/>
+                <EntitySet Name="zumm_trd_partner" EntityType="mdg_Srv.zumm_trd_partner"/>
+                <EntitySet Name="zmm_m12_info_234" EntityType="mdg_Srv.zmm_m12_info_234"/>
+                <EntitySet Name="zmm_m12_info_1" EntityType="mdg_Srv.zmm_m12_info_1"/>
+                <EntitySet Name="zmm_m12_info_5" EntityType="mdg_Srv.zmm_m12_info_5"/>
+                <EntitySet Name="z_city_code" EntityType="mdg_Srv.z_city_code"/>
+                <FunctionImport Name="material_group" Function="mdg_Srv.material_group"/>
+                <FunctionImport Name="zplink_create" Function="mdg_Srv.zplink_create"/>
+                <FunctionImport Name="zplink_delete" Function="mdg_Srv.zplink_delete"/>
+                <FunctionImport Name="zplink_records" Function="mdg_Srv.zplink_records" EntitySet="zplink"/>
+            </EntityContainer>
+            <EntityType Name="zplink">
+                <Key>
+                    <PropertyRef Name="sales_org"/>
+                    <PropertyRef Name="dist_channel"/>
+                    <PropertyRef Name="plant"/>
+                    <PropertyRef Name="material_group"/>
+                </Key>
+                <Property Name="sales_org" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="dist_channel" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="material_group" Type="Edm.String" MaxLength="9" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="zumm_trd_partner">
+                <Key>
+                    <PropertyRef Name="client"/>
+                    <PropertyRef Name="customer_number"/>
+                </Key>
+                <Property Name="client" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="customer_number" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="status" Type="Edm.String" MaxLength="1"/>
+                <Property Name="date" Type="Edm.String" MaxLength="4"/>
+                <Property Name="zarea" Type="Edm.String" MaxLength="1"/>
+                <Property Name="parent_code" Type="Edm.String" MaxLength="10"/>
+                <Property Name="company_class" Type="Edm.String" MaxLength="2"/>
+                <Property Name="area" Type="Edm.String" MaxLength="1"/>
+                <Property Name="country_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="city_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="name1" Type="Edm.String" MaxLength="50"/>
+                <Property Name="name2" Type="Edm.String" MaxLength="50"/>
+                <Property Name="short_name" Type="Edm.String" MaxLength="15"/>
+                <Property Name="address_line1" Type="Edm.String" MaxLength="50"/>
+                <Property Name="address_line2" Type="Edm.String" MaxLength="50"/>
+                <Property Name="consolidated" Type="Edm.String" MaxLength="1"/>
+                <Property Name="telephone_number" Type="Edm.String" MaxLength="15"/>
+                <Property Name="fax_number" Type="Edm.String" MaxLength="15"/>
+                <Property Name="telex_number" Type="Edm.String" MaxLength="15"/>
+                <Property Name="procurement_flag" Type="Edm.String" MaxLength="1"/>
+                <Property Name="deletion_indicator" Type="Edm.String" MaxLength="1"/>
+                <Property Name="created_on" Type="Edm.Date"/>
+                <Property Name="created_time" Type="Edm.TimeOfDay"/>
+                <Property Name="changed_on" Type="Edm.Date"/>
+                <Property Name="change_time" Type="Edm.TimeOfDay"/>
+            </EntityType>
+            <EntityType Name="zmm_m12_info_234">
+                <Key>
+                    <PropertyRef Name="client"/>
+                    <PropertyRef Name="record_type"/>
+                    <PropertyRef Name="reply_id"/>
+                    <PropertyRef Name="sales_order_code"/>
+                    <PropertyRef Name="issued_date"/>
+                    <PropertyRef Name="unified_model_number"/>
+                    <PropertyRef Name="suplier_code"/>
+                </Key>
+                <Property Name="client" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="record_type" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="reply_id" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="sales_order_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="issued_date" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="unified_model_number" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="suplier_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="description_1" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_2" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_3" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_4" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_5" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_6" Type="Edm.String" MaxLength="30"/>
+                <Property Name="description_7" Type="Edm.String" MaxLength="30"/>
+                <Property Name="filler" Type="Edm.String" MaxLength="40"/>
+                <Property Name="revised_id" Type="Edm.String" MaxLength="7"/>
+                <Property Name="filler_2" Type="Edm.String" MaxLength="33"/>
+                <Property Name="printer_spec_8" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_9" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_10" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_11" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_12" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_13" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_14" Type="Edm.String" MaxLength="30"/>
+                <Property Name="revised_id_3" Type="Edm.String" MaxLength="7"/>
+                <Property Name="filler_3" Type="Edm.String" MaxLength="33"/>
+                <Property Name="printer_spec_15" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_16" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_17" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_18" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_19" Type="Edm.String" MaxLength="30"/>
+                <Property Name="printer_spec_20" Type="Edm.String" MaxLength="30"/>
+                <Property Name="filler_4" Type="Edm.String" MaxLength="33"/>
+                <Property Name="revised_id_4" Type="Edm.String" MaxLength="7"/>
+                <Property Name="filler_5" Type="Edm.String" MaxLength="33"/>
+                <Property Name="delete_indicator" Type="Edm.String" MaxLength="1"/>
+                <Property Name="created_on" Type="Edm.Date"/>
+                <Property Name="changed_on" Type="Edm.Date"/>
+                <Property Name="change_time" Type="Edm.TimeOfDay"/>
+            </EntityType>
+            <EntityType Name="zmm_m12_info_1">
+                <Key>
+                    <PropertyRef Name="client"/>
+                    <PropertyRef Name="reply_id"/>
+                    <PropertyRef Name="sales_company_code"/>
+                    <PropertyRef Name="issued_date"/>
+                    <PropertyRef Name="unified_model_number"/>
+                    <PropertyRef Name="suplier_code"/>
+                    <PropertyRef Name="factory_code"/>
+                </Key>
+                <Property Name="client" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="reply_id" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="sales_company_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="issued_date" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="unified_model_number" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="suplier_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="factory_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="department_code" Type="Edm.String" MaxLength="8"/>
+                <Property Name="legacy_color_code" Type="Edm.String" MaxLength="2"/>
+                <Property Name="brand_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="old_model_number" Type="Edm.String" MaxLength="20"/>
+                <Property Name="h_s_code" Type="Edm.String" MaxLength="9"/>
+                <Property Name="account_category" Type="Edm.String" MaxLength="11"/>
+                <Property Name="overseas_category" Type="Edm.String" MaxLength="11"/>
+                <Property Name="advertisement_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="temp_model_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="min_accept_quantity" Type="Edm.String" MaxLength="9"/>
+                <Property Name="min_accept_quantity_unit_code" Type="Edm.String" MaxLength="2"/>
+                <Property Name="printed_model_number" Type="Edm.String" MaxLength="30"/>
+                <Property Name="kit_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="e_l_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="product_name" Type="Edm.String" MaxLength="50"/>
+                <Property Name="department_name" Type="Edm.String" MaxLength="35"/>
+                <Property Name="personal_name" Type="Edm.String" MaxLength="15"/>
+                <Property Name="parent_code" Type="Edm.String" MaxLength="8"/>
+                <Property Name="upc" Type="Edm.String" MaxLength="12"/>
+                <Property Name="fiscal_year" Type="Edm.String" MaxLength="4"/>
+                <Property Name="sales_date_new_model" Type="Edm.String" MaxLength="8"/>
+                <Property Name="filler_1" Type="Edm.String" MaxLength="1"/>
+                <Property Name="revised_id" Type="Edm.String" MaxLength="20"/>
+                <Property Name="filler_2" Type="Edm.String" MaxLength="20"/>
+                <Property Name="delete_indicator" Type="Edm.String" MaxLength="1"/>
+                <Property Name="actual_message_issued_date" Type="Edm.String"/>
+                <Property Name="created_on" Type="Edm.Date"/>
+                <Property Name="changed_on" Type="Edm.Date"/>
+                <Property Name="change_time" Type="Edm.TimeOfDay"/>
+            </EntityType>
+            <EntityType Name="zmm_m12_info_5">
+                <Key>
+                    <PropertyRef Name="client"/>
+                    <PropertyRef Name="sales_company_code"/>
+                    <PropertyRef Name="unified_model_number"/>
+                    <PropertyRef Name="suplier_code"/>
+                </Key>
+                <Property Name="client" Type="Edm.String" MaxLength="3" Nullable="false"/>
+                <Property Name="sales_company_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="unified_model_number" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="suplier_code" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="package_type_code" Type="Edm.String" MaxLength="2"/>
+                <Property Name="price_available_date" Type="Edm.String" MaxLength="8"/>
+                <Property Name="price_validity_date" Type="Edm.String" MaxLength="8"/>
+                <Property Name="end_user_code" Type="Edm.String" MaxLength="8"/>
+                <Property Name="sales_trade_term_code" Type="Edm.String" MaxLength="20"/>
+                <Property Name="sales_term_rate_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="sales_currency_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="quantity_per_package" Type="Edm.String" MaxLength="9"/>
+                <Property Name="quantity_per_package_per_decimal" Type="Edm.String" MaxLength="1"/>
+                <Property Name="net_weight" Type="Edm.String" MaxLength="9"/>
+                <Property Name="gross_weight" Type="Edm.String" MaxLength="9"/>
+                <Property Name="measurement" Type="Edm.String" MaxLength="9"/>
+                <Property Name="width" Type="Edm.String" MaxLength="5"/>
+                <Property Name="depth" Type="Edm.String" MaxLength="5"/>
+                <Property Name="height" Type="Edm.String" MaxLength="5"/>
+                <Property Name="payer_code" Type="Edm.String" MaxLength="8"/>
+                <Property Name="sales_unit_price_basis" Type="Edm.String" MaxLength="9"/>
+                <Property Name="sales_unit_price_basis_dec" Type="Edm.String" MaxLength="1"/>
+                <Property Name="sales_unit_price_unit_code" Type="Edm.String" MaxLength="2"/>
+                <Property Name="sales_unit_price" Type="Edm.String" MaxLength="15"/>
+                <Property Name="sales_unit_price_exchange_rate" Type="Edm.String" MaxLength="11"/>
+                <Property Name="price_available_date_2" Type="Edm.String" MaxLength="8"/>
+                <Property Name="price_validity_date_2" Type="Edm.String" MaxLength="8"/>
+                <Property Name="sales_unit_price_2" Type="Edm.String" MaxLength="15"/>
+                <Property Name="sales_unit_price_exchange_rate_2" Type="Edm.String" MaxLength="15"/>
+                <Property Name="tent_price_mark_1" Type="Edm.String" MaxLength="1"/>
+                <Property Name="tent_price_mark_2" Type="Edm.String" MaxLength="1"/>
+                <Property Name="route" Type="Edm.String" MaxLength="6"/>
+                <Property Name="plu_supplier_perm_id" Type="Edm.String" MaxLength="1"/>
+                <Property Name="filler" Type="Edm.String" MaxLength="66"/>
+                <Property Name="revised_flag" Type="Edm.String" MaxLength="27"/>
+                <Property Name="filler_2" Type="Edm.String" MaxLength="21"/>
+                <Property Name="delete_indicator" Type="Edm.String" MaxLength="1"/>
+                <Property Name="created_on" Type="Edm.Date"/>
+                <Property Name="changed_on" Type="Edm.Date"/>
+                <Property Name="change_time" Type="Edm.TimeOfDay"/>
+                <Property Name="actual_message_issued_date" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="z_city_code">
+                <Property Name="city_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="lang" Type="Edm.String" MaxLength="2"/>
+                <Property Name="area_code" Type="Edm.String" MaxLength="2"/>
+                <Property Name="country_code" Type="Edm.String" MaxLength="3"/>
+                <Property Name="city_name" Type="Edm.String" MaxLength="50"/>
+                <Property Name="short_name" Type="Edm.String" MaxLength="25"/>
+                <Property Name="created_on" Type="Edm.Date"/>
+                <Property Name="created_time" Type="Edm.TimeOfDay"/>
+                <Property Name="changed_on" Type="Edm.Date"/>
+                <Property Name="change_time" Type="Edm.TimeOfDay"/>
+                <Property Name="legacy_information" Type="Edm.String" MaxLength="20"/>
+                <Property Name="sap_city" Type="Edm.String" MaxLength="10"/>
+            </EntityType>
+            <Function Name="material_group" IsBound="false" IsComposable="false">
+                <Parameter Name="material_group" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zplink_create" IsBound="false" IsComposable="false">
+                <Parameter Name="sales_org" Type="Edm.String"/>
+                <Parameter Name="dist_channel" Type="Edm.String"/>
+                <Parameter Name="plant" Type="Edm.String"/>
+                <Parameter Name="material_group" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zplink_delete" IsBound="false" IsComposable="false">
+                <Parameter Name="sales_org" Type="Edm.String"/>
+                <Parameter Name="dist_channel" Type="Edm.String"/>
+                <Parameter Name="plant" Type="Edm.String"/>
+                <Parameter Name="material_group" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zplink_records" IsBound="false" IsComposable="false">
+                <ReturnType Type="Collection(mdg_Srv.zplink)" Nullable="false"/>
+            </Function>
+            <Annotations Target="mdg_Srv.zumm_trd_partner/created_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zumm_trd_partner/created_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zumm_trd_partner/changed_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zumm_trd_partner/change_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_234/created_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_234/changed_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_234/change_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_1/created_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_1/changed_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_1/change_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_5/created_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_5/changed_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.zmm_m12_info_5/change_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.z_city_code/created_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.z_city_code/created_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.z_city_code/changed_on">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+            <Annotations Target="mdg_Srv.z_city_code/change_time">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

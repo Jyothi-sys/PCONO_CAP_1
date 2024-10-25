@@ -1,0 +1,23 @@
+{
+  "view/App.view.xml": 1716836300915,
+  "model/models.js": 1716836300915,
+  "manifest.json": 1716836648760,
+  "controller/View1.controller.js": 1716836300915,
+  "controller/App.controller.js": 1716836300915,
+  "Component.js": 1716836300915,
+  "Component-preload.js": 1716836649267,
+  "model/models-dbg.js": 1716836300915,
+  "controller/View1-dbg.controller.js": 1716836300915,
+  "controller/App-dbg.controller.js": 1716836300915,
+  "Component-dbg.js": 1716836300915,
+  "view/View1.view.xml": 1716836300915,
+  "i18n/i18n.properties": 1716836300915,
+  "css/style.css": 1716836300915,
+  "Fragments/zone.fragment.xml": 1716836300915,
+  "Fragments/plant.fragment.xml": 1716836300915,
+  "Fragments/partner.fragment.xml": 1716836300915,
+  "Fragments/highway905.fragment.xml": 1716836300915,
+  "Fragments/dc.fragment.xml": 1716836300915,
+  "Fragments/companyCode.fragment.xml": 1716836300915,
+  "index.html": 1716836300915
+}

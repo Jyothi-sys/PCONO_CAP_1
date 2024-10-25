@@ -1,0 +1,1 @@
+using mdg_Srv as service from '../../srv/main-srv';

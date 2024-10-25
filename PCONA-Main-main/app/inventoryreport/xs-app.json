@@ -1,0 +1,38 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/v2/InventorySrv/(.*)$",
+      "target": "/v2/InventorySrv/$1",
+      "destination": "Pansonic_CAPM",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/sap/opu/odata/sap/ZPTP_CDS_INVREC_CDS/(.*)$",
+      "target": "/v2/ZPTP_CDS_INVREC_CDS/$1",
+      "destination": "Panasonic_S4HANABasicAuth",
+      "authenticationType": "none",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/resources/(.*)$",
+      "target": "/resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^/test-resources/(.*)$",
+      "target": "/test-resources/$1",
+      "authenticationType": "none",
+      "destination": "ui5"
+    },
+    {
+      "source": "^(.*)$",
+      "target": "$1",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    }
+  ]
+}

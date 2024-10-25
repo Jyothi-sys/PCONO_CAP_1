@@ -1,0 +1,38 @@
+### GET the data for Serial Tracking
+GET http://localhost:4004/SerialtrackingSrv/serial_tracking
+
+
+
+###POST the data in 3PL Inventory balance
+POST http://localhost:4004/SerialtrackingSrv/serial_tracking
+Content-Type: application/json
+
+{
+    "file_source"          : "Factory",
+    "sales_order"          : "2374",
+    "delivery_number"      : "5342",
+    "delivery_line_item"   : "23",
+    "material"             : "TEST",
+    "serial_number"        : "12345",
+    "tracking_number"      : ""
+}
+
+
+### DELETE the data for Serial Tracking above 8 days
+GET http://localhost:4004/SerialtrackingSrv/serial_delete()
+
+### GET the data for Serial Tracking
+GET http://localhost:4004/SerialtrackingSrv/serial_delete_param(daysToRetain='40')
+
+
+
+### GET the data for Drop Shipment
+GET http://localhost:4004/SerialtrackingSrv/drop_shipment(sales_order='7957933',material='FZ-VSD55152W')
+
+
+
+### GET the data for Drop Shipment
+GET http://localhost:4004/SerialtrackingSrv/drop_shipment(sales_order='100',material='mat1')
+
+### GET the data for Stock Shipment
+GET http://localhost:4004/SerialtrackingSrv/stock_shipment(delivery_number='8000786923',delivery_line_item='10')

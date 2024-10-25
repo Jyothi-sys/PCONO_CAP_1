@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Customer_Number}"
+  liveChange="onSearchcustomer_number_TrpPart"
+  confirm="onSelectioncustomer_number_TrpPart"
+  cancel="onDialogClose_trdPart"
+  multiSelect="true"
+  items="{customer_numberTrdPartData>/}">
+
+<StandardListItem 
+
+title="{path: 'customer_numberTrdPartData>customer_number'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Companycode}"
+  liveChange="onSearchsales_order_code_Info234"
+  confirm="onSelectionsales_order_code_Info234"
+  cancel="onDialogClose_Info234"
+  multiSelect="true"
+  items="{sales_order_codeInfo234Data>/}">
+
+<StandardListItem 
+
+title="{path: 'sales_order_codeInfo234Data>sales_order_code'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

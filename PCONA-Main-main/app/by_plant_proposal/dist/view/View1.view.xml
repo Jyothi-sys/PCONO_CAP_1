@@ -1,0 +1,352 @@
+<mvc:View
+    controllerName="byplantproposal.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ff="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page title="{i18n>title}">
+                    <fb:FilterBar
+                        id="filterbar"
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                        search="onGoToReport"
+                        showClearOnFB="true"
+                        clear="onPressClear"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                    >
+                        <fb:filterGroupItems>
+                        
+                            <fb:FilterGroupItem
+                                name="Customer"
+                                label="{i18n>Customer}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Customer"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenCustomerFragment"
+                                        placeholder="{i18n>Customer}"
+                                        tokenUpdate="onTokenCompanyCodeChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                                    <fb:FilterGroupItem
+                                name="Identifier"
+                                label="{i18n>RuleID}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Identifier"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenIdentifierFragment"
+                                        placeholder="{i18n>RuleID}"
+                                        tokenUpdate="onTokenCompanyCodeChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Group"
+                                label="{i18n>Delgroup}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Group"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenGroupFragment"
+                                        placeholder="{i18n>Delgroup}"
+                                        tokenUpdate="onTokenGroupChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            
+
+
+                            <fb:FilterGroupItem
+                                name="ShipPlant"
+                                label="{i18n>ShipPlant}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_ShipPlant"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenShipPlantFragment"
+                                        placeholder="{i18n>ShipPlant}"
+                                        tokenUpdate="onTokenShipPlantChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                                 <fb:FilterGroupItem
+                                name="Days"
+                                label="{i18n>Days}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Days"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenDaysFragment"
+                                        placeholder="{i18n>Days}"
+                                        tokenUpdate="onTokenDaysChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                           
+
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+
+                    <content>
+                    <Table
+                          mode="MultiSelect"
+                            selectionChange="onselectionChange"
+                            alternateRowColors="true"
+                            backgroundDesign="Solid"
+                            sticky="ColumnHeaders"
+                            headerText="Material Plant Link Report"
+                            items="{tableModel>/}"
+                            autoPopinMode="false"
+                            contextualWidth="Auto"
+                            id="exportTable"
+                            inset="false"
+                            growing="true"
+                            growingThreshold="500"
+                            growingScrollToLoad="false"
+                        >
+                           <headerToolbar>
+                                <OverflowToolbar>
+                                    <ToolbarSpacer />
+
+                                   
+
+                                      <Button
+                                       text = "upload file"
+                                        press="onUploadFileDialog"
+                                    />
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onExportSelected"
+                                    />
+	                                <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleSortButtonPressed"
+                                    />
+                                    <Button                                        
+                                        text ="Create"
+                                        press="onCreateTableRow"
+                                    />
+                                  
+                                    <Button                                        
+                                        text ="Edit"
+                                        press="onEditTableRow"
+                                        id="editModeButton"
+                                    />
+                                       <Button                                        
+                                        text ="Delete"
+                                        press="onDelete"
+                                        id="deleteModeButton"
+                                    />                                   
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column
+                                    
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        wrapping="true"
+                                        text="{i18n>RuleID}"
+                                    />
+                                </Column>
+
+                            
+                                <Column
+                                    
+                                    minScreenWidth="Tablet"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Customer}"
+                                    />
+                                </Column>
+                                
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Delgroup}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>ShipPlant}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                   <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>ETADays}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>CreatedBy}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>CreatedOn}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                 <!-- <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>created_time}"
+                                        wrapping="true"
+                                    />
+                                </Column> -->
+
+                                 <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>changedBy}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                  <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>changedOn}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                 <!-- <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>change_time}"
+                                        wrapping="true"
+                                    />
+                                </Column> -->
+
+                              
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{tableModel>Identifier}"/>
+                                        <Text text="{tableModel>Customer}"/>                                        
+                                        <Text text="{tableModel>Group}"/>
+                                        <Text text="{tableModel>ShipPlant}"/>    
+                                        <Text text="{tableModel>Days}"/> 
+                                        <Text text="{tableModel>created_by}"/>                                       
+                                        <Text  text = "{path : 'tableModel>created_on',
+                                         formatter : '.customFormatter.formatDate'}"></Text>
+                                         <Text text="{tableModel>changed_by}"/>
+                                        <Text  text = "{path : 'tableModel>changed_on',
+                                         formatter : '.customFormatter.formatDate'}"></Text>  
+
+
+
+
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

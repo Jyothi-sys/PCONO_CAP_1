@@ -1,0 +1,23 @@
+
+
+
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified">
+  <Dialog title="Upload Records">
+
+	 <HBox>
+            <Label text="Select the file to upload" class="sapUiSmallMargin"></Label>
+            <u:FileUploader id="fileUploader" uploadOnChange="true" buttonText="Browse..." change="onSelectFile"></u:FileUploader>
+    </HBox>
+
+<buttons>
+<Button text="cancel" type="Reject" class="sapUiSmallMarginEnd" press="onCancelUpload"/>				
+</buttons>
+
+</Dialog >
+ 
+</c:FragmentDefinition>
+

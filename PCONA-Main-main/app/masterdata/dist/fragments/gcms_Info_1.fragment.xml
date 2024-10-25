@@ -1,0 +1,298 @@
+<core:FragmentDefinition
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <VBox>
+                           <fb:FilterBar
+                        id="id_fb_Info1"
+                        persistencyKey="myPersKey_Info1"
+                        useToolbar="false"
+                        search="onGoToReport_Info1"
+                        showClearOnFB="true"
+                        clear="onClear1"
+                        filterChange=".onFilterChange_Info1"
+                        afterVariantLoad=".onAfterVariantLoad_Info1"
+                    >
+                        <fb:filterGroupItems>
+                            <!-- <fb:FilterGroupItem
+                                name="Client Info1"
+                                label="{i18n>Client}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                        <MultiInput
+                                        id="id_Info1_Client"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenClientFragment_Info1"
+                                        placeholder="{i18n>Client}"
+                                        tokenUpdate="onTokenClientChange_Info1"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> -->
+
+                            <fb:FilterGroupItem
+                                name="Reply ID Info1"
+                                label="{i18n>Reply_ID}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info1_ReplyId"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenReplyIdFragment_Info1"
+                                        placeholder="{i18n>Reply_ID}"
+                                        tokenUpdate="onTokenReplyIdChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Sales Company Code Info1"
+                                label="{i18n>Sales_Company_Code}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info1_SalesCompanyCode"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenSalesCCFragment_Info1"
+                                        placeholder="{i18n>Sales_Company_Code}"
+                                        tokenUpdate="onTokenSalesCCChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Issued Date Info1"
+                                label="{i18n>issued_date}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info1_IssueDate"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenIssueDateFragment_Info1"
+                                        placeholder="{i18n>issued_date}"
+                                        tokenUpdate="onTokenIssueDateChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Unified Model Number Info1"
+                                label="{i18n>unified_model_number}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info1_UniModelNo"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenUniModNoFragment_Info1"
+                                        placeholder="{i18n>unified_model_number}"
+                                        tokenUpdate="onTokenUniModNoChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Suplier Code Info1"
+                                label="{i18n>Suplier_Code}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                     <MultiInput
+                                        id="id_Info1_SupplierCode"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenSuppCodeFragment_Info1"
+                                        placeholder="{i18n>Suplier_Code}"
+                                        tokenUpdate="onTokenSuppCodeChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Factory Code Info1"
+                                label="{i18n>factory_code}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                     <MultiInput
+                                        id="id_Info1_FactoryCode"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenFactCodeFragment_Info1"
+                                        placeholder="{i18n>factory_code}"
+                                        tokenUpdate="onTokenFactCodeChange_Info1"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Created On"
+                                label="{i18n>Created_On}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_5"
+                                        placeholder="{i18n>Created_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeCreateDateInfo1"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed_On}"
+                                groupName="Group_Info1"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_6"
+                                        placeholder="{i18n>Changed_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeDateInfo1"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> 
+                                             
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                    <ScrollContainer
+		height="100%"
+		width="100%"
+		vertical="true"
+        horizontal="true"
+		focusable="true">
+        <Table
+            id="idInfo_1_Table"
+            inset="false"
+            items="{Info1_Model>/}"
+            columns="{columndataInfo_1>/Result}"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title
+                            text="{i18n>ModelBasicInformation}"
+                            level="H2"
+                        />
+
+                                <ToolbarSpacer />
+                                 <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleInfo_1_SortButtonPressed"
+                                    />
+
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onInfo1Export"
+                                    />
+
+                                    <MultiComboBox
+                                        placeholder="{i18n>show_hidecolumns}"
+                                        selectionChange="Info1SelectionChange"
+                                        
+                                        width="30%"
+                                        items="{columndataInfo_1>/Result}"
+                                        id="columndataInfo_1"
+                                    >
+                                
+                                        <core:Item  key="{columndataInfo_1>okey}"  text="{columndataInfo_1>otext}" />
+                                       
+                                    </MultiComboBox>
+
+                    </content>
+               
+            </OverflowToolbar>
+			 </headerToolbar>
+            <columns>
+               <Column 
+                styleClass="{columndataInfo_1>okey}"
+                visible="{columndataInfo_1>visible}"
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    width="{columndataInfo_1>width}"
+                >
+                    <Text text="{columndataInfo_1>otext}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <!-- <Text text="{Info1_Model>client}" /> -->
+                        <Text text="{Info1_Model>reply_id}" />
+                        <Text text="{Info1_Model>sales_company_code}" />
+                        <Text text="{Info1_Model>issued_date}" />
+                        <Text text="{Info1_Model>unified_model_number}" />
+                        <Text text="{Info1_Model>suplier_code}" />
+                        <Text text="{Info1_Model>factory_code}" />
+                        <Text text="{Info1_Model>department_code}" />
+                        <Text text="{Info1_Model>legacy_color_code}" />
+                        <Text text="{Info1_Model>brand_code}" />
+                        <Text text="{Info1_Model>old_model_number}" />
+                        <Text text="{Info1_Model>h_s_code}" />
+                        <Text text="{Info1_Model>account_category}" />
+                        <Text text="{Info1_Model>overseas_category}" />
+                        <Text text="{Info1_Model>advertisement_id}" />
+                        <Text text="{Info1_Model>temp_model_id}" />
+                        <Text text="{Info1_Model>min_accept_quantity}" />
+                        <Text text="{Info1_Model>min_accept_quantity_unit_code}" />
+                        <Text text="{Info1_Model>printed_model_number}" />
+                        <Text text="{Info1_Model>kit_id}" />
+                        <Text text="{Info1_Model>e_l_id}" />
+                        <Text text="{Info1_Model>product_name}" />
+                        <Text text="{Info1_Model>department_name}" />
+                        <Text text="{Info1_Model>personal_name}" />
+                        <Text text="{Info1_Model>parent_code}" />
+                        <Text text="{Info1_Model>upc}" />
+                        <Text text="{Info1_Model>fiscal_year}" />
+                        <Text text="{Info1_Model>sales_date_new_model}" />
+                        <Text text="{Info1_Model>filler_1}" />
+                        <Text text="{Info1_Model>revised_id}" />
+                        <Text text="{Info1_Model>filler_2}" />
+                        <Text text="{Info1_Model>delete_indicator}" />
+                        <Text text="{Info1_Model>actual_message_issued_date}" />
+                        <Text text="{Info1_Model>created_on}" />
+                        <Text text="{Info1_Model>changed_on}" />
+                        <Text text="{Info1_Model>change_time}" />
+                        
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </ScrollContainer>
+    </VBox>
+</core:FragmentDefinition>

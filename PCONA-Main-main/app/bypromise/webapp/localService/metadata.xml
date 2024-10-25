@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="salesorder_Srv" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="pivs_unprocessed_so_prodsched" EntityType="salesorder_Srv.pivs_unprocessed_so_prodsched"/>
+                <EntitySet Name="pivs_sales_orders" EntityType="salesorder_Srv.pivs_sales_orders"/>
+                <EntitySet Name="by_promise" EntityType="salesorder_Srv.by_promise"/>
+                <ActionImport Name="pivs_batch" Action="salesorder_Srv.pivs_batch"/>
+                <ActionImport Name="bypromise_batch" Action="salesorder_Srv.bypromise_batch"/>
+            </EntityContainer>
+            <EntityType Name="pivs_unprocessed_so_prodsched">
+                <Property Name="companycode" Type="Edm.String" MaxLength="5"/>
+                <Property Name="transmission_date" Type="Edm.String" MaxLength="10"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4"/>
+                <Property Name="hdr_flag" Type="Edm.String" MaxLength="1"/>
+                <Property Name="id" Type="Edm.String" MaxLength="2"/>
+                <Property Name="posting_date" Type="Edm.String" MaxLength="10"/>
+                <Property Name="unified_mode" Type="Edm.String" MaxLength="40"/>
+                <Property Name="quantity" Type="Edm.String" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="pivs_sales_orders">
+                <Key>
+                    <PropertyRef Name="indicator"/>
+                    <PropertyRef Name="transmission_date"/>
+                    <PropertyRef Name="sales_order"/>
+                    <PropertyRef Name="item_number"/>
+                    <PropertyRef Name="scheduled_line_no"/>
+                </Key>
+                <Property Name="indicator" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="transmission_date" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="sales_order" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="item_number" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="scheduled_line_no" Type="Edm.String" MaxLength="25" Nullable="false"/>
+                <Property Name="material" Type="Edm.String" MaxLength="20"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4"/>
+                <Property Name="factory_confirm_quantity" Type="Edm.String" MaxLength="5"/>
+                <Property Name="confirm_quantity" Type="Edm.String" MaxLength="5"/>
+                <Property Name="uom" Type="Edm.String" MaxLength="2"/>
+                <Property Name="confirm_date" Type="Edm.String" MaxLength="10"/>
+                <Property Name="status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="message" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="by_promise">
+                <Key>
+                    <PropertyRef Name="transmission_date"/>
+                    <PropertyRef Name="sales_order"/>
+                    <PropertyRef Name="item_number"/>
+                    <PropertyRef Name="scheduled_line_no"/>
+                </Key>
+                <Property Name="transmission_date" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="sales_order" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="item_number" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="scheduled_line_no" Type="Edm.String" MaxLength="25" Nullable="false"/>
+                <Property Name="material" Type="Edm.String" MaxLength="20"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4"/>
+                <Property Name="confirm_quantity" Type="Edm.String" MaxLength="5"/>
+                <Property Name="uom" Type="Edm.String" MaxLength="2"/>
+                <Property Name="confirm_date" Type="Edm.String" MaxLength="10"/>
+                <Property Name="status" Type="Edm.String" MaxLength="10"/>
+                <Property Name="message" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <Action Name="pivs_batch" IsBound="false">
+                <Parameter Name="batch" Type="Collection(salesorder_Srv.pivs_sales_orders)" Nullable="false"/>
+                <ReturnType Type="Collection(Edm.String)" Nullable="false"/>
+            </Action>
+            <Action Name="bypromise_batch" IsBound="false">
+                <Parameter Name="batch" Type="Collection(salesorder_Srv.by_promise)" Nullable="false"/>
+                <ReturnType Type="Collection(Edm.String)" Nullable="false"/>
+            </Action>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

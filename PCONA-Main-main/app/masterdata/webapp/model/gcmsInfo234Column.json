@@ -1,0 +1,197 @@
+{
+    "Result": [{
+        "okey": "record_type",
+        "otext": "Record Type",
+        "visible":true,
+        "width":"4rem"
+       },{
+        "okey": "reply_id",
+        "otext": "Reply ID",
+        "visible":true,
+        "width":"4rem"
+       },{
+        "okey": "sales_order_code",
+        "otext": "Sales Order Code",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "issued_date",
+        "otext": "Issued Date",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "unified_model_number",
+        "otext": "Unified Model Number",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "suplier_code",
+        "otext": "Suplier Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "description_1",
+        "otext": "Description 1",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "description_2",
+        "otext": "Description 2",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "description_3",
+        "otext": "Description 3",
+        "visible":false,
+        "width":"8rem"
+       },
+       {
+        "okey": "description_4",
+        "otext": "Description 4",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "description_5",
+        "otext": "Description 5",
+        "visible":false,
+        "width":"8rem"
+       },
+       {
+        "okey": "description_6",
+        "otext": "Description 6",
+        "visible":false,
+        "width":"8rem"
+       },
+       {
+        "okey": "description_7",
+        "otext": "Description 7",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "filler",
+        "otext": "Filler",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "revised_id",
+        "otext": "Revised Id",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "filler_2",
+        "otext": "Filler 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_8",
+        "otext": "Printer Spec 8",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_9",
+        "otext": "Printer Spec 9",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_10",
+        "otext": "Printer Spec 10",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_11",
+        "otext": "Printer Spec 11",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_12",
+        "otext": "Printer Spec 12",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_13",
+        "otext": "Printer Spec 13",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_14",
+        "otext": "Printer Spec 14",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "revised_id_3",
+        "otext": "Revised Id 3",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler_3",
+        "otext": "Filler 3",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_15",
+        "otext": "Printer Spec 15",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_16",
+        "otext": "Printer Spec 16",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_17",
+        "otext": "Printer Spec 17",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_18",
+        "otext": "Printer Spec 18",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_19",
+        "otext": "Printer Spec 19",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "printer_spec_20",
+        "otext": "Printer Spec 20",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler_4",
+        "otext": "Filler 4",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "revised_id_4",
+        "otext": "Revised Id 4",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler_5",
+        "otext": "Filler 5",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "delete_indicator",
+        "otext": "Delete Indicator",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "created_on",
+        "otext": "Created On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "changed_on",
+        "otext": "Changed On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "change_time",
+        "otext": "Change Time",
+        "visible":false,
+        "width":"5rem"
+       }
+    ]
+   }

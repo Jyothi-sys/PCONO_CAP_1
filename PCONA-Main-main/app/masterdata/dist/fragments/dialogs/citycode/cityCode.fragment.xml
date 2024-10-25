@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>CityCode}"
+  liveChange="onSearchCityCode"
+  confirm="onSelectionCityCode"
+  cancel="onDialogClose_CityCode"
+  multiSelect="true"
+  items="{city_code_Data>/}">
+
+<StandardListItem 
+
+title="{path: 'city_code_Data>city_code'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

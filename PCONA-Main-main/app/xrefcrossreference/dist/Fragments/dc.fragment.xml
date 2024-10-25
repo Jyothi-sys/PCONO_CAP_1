@@ -1,0 +1,24 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>dc}"
+  liveChange="onSearchDc"
+  confirm="onSelectionDc"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{dcData>/}">
+
+<StandardListItem 
+
+title="{path: 'dcData>dc'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

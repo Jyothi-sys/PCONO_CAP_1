@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>reply_id}"
+  liveChange="onSearchReplyId_Info1"
+  confirm="onSelectionReplyId_Info1"
+  cancel="onDialogClose_Info1"
+  multiSelect="true"
+  items="{reply_idInfo1Data>/}">
+
+<StandardListItem 
+
+title="{path: 'reply_idInfo1Data>reply_id'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

@@ -1,0 +1,43 @@
+<mvc:View controllerName="masterdata.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Panel >
+        	<FlexBox
+				height="35px"
+				alignItems="Start"
+				justifyContent="Center">
+            	<ComboBox id="idPopinLayout" selectedKey="K1"
+						change="onPopinLayoutChanged">
+						<items>
+					<core:Item  key="K1"  text="{i18n>Trading_Partner}" />
+                   <core:Item  key="K2"  text="{i18n>Model_Descriptions}" />
+				   <core:Item  key="K3"  text="{i18n>Model_Price_Information}" />
+                   <core:Item  key="K4"  text="{i18n>Model_Basic_Information}" />
+                   <core:Item  key="K5"  text="{i18n>City_Code_Table}" />
+						</items>
+					</ComboBox>
+            </FlexBox>
+        </Panel>
+		<Panel id="f1" visible="true">
+		  <core:Fragment fragmentName="masterdata.fragments.tradingPartner" type="XML"/> 
+		</Panel>
+		 <Panel id="f2" visible="false">
+		  <core:Fragment fragmentName="masterdata.fragments.gcms_Info_234" type="XML"/> 
+		</Panel>
+		<Panel visible="false" id="f3" >
+		 <core:Fragment fragmentName="masterdata.fragments.gcms_Info_5" type="XML"/> 
+		</Panel>
+        <Panel visible="false" id="f4" >
+		 <core:Fragment fragmentName="masterdata.fragments.gcms_Info_1" type="XML"/> 
+		</Panel>
+        <Panel visible="false" id="f5" >
+		 <core:Fragment fragmentName="masterdata.fragments.cityCodeTable" type="XML"/> 
+		</Panel>
+        
+		
+		
+        </content>
+    </Page>
+</mvc:View>

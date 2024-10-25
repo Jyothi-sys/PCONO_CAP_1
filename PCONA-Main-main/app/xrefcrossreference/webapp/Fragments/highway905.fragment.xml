@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>warehouse_hwy905}"
+  liveChange="onSearchHighway"
+  confirm="onSelectionHighway"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{WarehouseData>/}">
+
+<StandardListItem 
+
+title="{path: 'WarehouseData>warehouse_hwy905'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

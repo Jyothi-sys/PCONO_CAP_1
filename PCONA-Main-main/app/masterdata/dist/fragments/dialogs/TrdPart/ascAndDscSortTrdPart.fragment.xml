@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog 
+		confirm="TrdPart_handleSortDialogConfirm">
+		<sortItems  >
+			
+			<!-- <ViewSettingsItem text="{i18n>client}" key="client"  /> -->
+			<ViewSettingsItem text="{i18n>customer_number}" key="customer_number"  />
+			<ViewSettingsItem text="{i18n>customer_number}" key="status"  />
+			<ViewSettingsItem text="{i18n>date}" key="date"  />
+			<ViewSettingsItem text="{i18n>parent_code}" key="parent_code" selected="true" />
+			<ViewSettingsItem text="{i18n>company_class}" key="company_class"  />
+			<ViewSettingsItem text="{i18n>area}" key="area"  />
+			<ViewSettingsItem text="{i18n>country_code}" key="country_code"  />
+			<ViewSettingsItem text="{i18n>city_code}" key="city_code"  />
+			<ViewSettingsItem text="{i18n>name1}" key="name1"  />
+			<ViewSettingsItem text="{i18n>name2}" key="name2"  />
+			<ViewSettingsItem text="{i18n>short_name}" key="short_name"  />
+			<ViewSettingsItem text="{i18n>address_line1}" key="address_line1"  />
+			<ViewSettingsItem text="{i18n>address_line2}" key="address_line2"  />
+			<ViewSettingsItem text="{i18n>consolidated}" key="consolidated"  />
+			<ViewSettingsItem text="{i18n>telephone_number}" key="telephone_number"  />
+			<ViewSettingsItem text="{i18n>fax_number}" key="fax_number"  />
+			<ViewSettingsItem text="{i18n>telex_number}" key="telex_number"  />
+			<ViewSettingsItem text="{i18n>procurement_flag}" key="procurement_flag"  />
+			<ViewSettingsItem text="{i18n>deletion_indicator}" key="deletion_indicator"  />
+			<ViewSettingsItem text="{i18n>created_on}" key="created_on"  />			
+			<ViewSettingsItem text="{i18n>created_time}" key="created_time"  />
+			<ViewSettingsItem text="{i18n>changed_on}" key="changed_on"  />
+			<ViewSettingsItem text="{i18n>change_time}" key="change_time"  />
+			<ViewSettingsItem text="{i18n>global_group_code}" key="global_group_code"  />
+			<ViewSettingsItem text="{i18n>created_by}" key="created_by"  />
+			<ViewSettingsItem text="{i18n>changed_by}" key="changed_by"  />
+			
+			
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

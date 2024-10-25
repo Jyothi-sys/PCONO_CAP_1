@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>MaterialGroup}"
+  liveChange="onSearchMaterialGroup"
+  confirm="onSelectionMaterialGroup"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{MatGroupData>/}">
+
+<StandardListItem 
+
+title="{path: 'MatGroupData>MATERIAL_GROUP'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

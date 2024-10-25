@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>client}"
+  liveChange="onSearchClient_Info234"
+  confirm="onSelectionClient_Info234"
+  cancel="onDialogClose_Info234"
+  multiSelect="true"
+  items="{ClientInfo234Data>/}">
+
+<StandardListItem 
+
+title="{path: 'ClientInfo234Data>client'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

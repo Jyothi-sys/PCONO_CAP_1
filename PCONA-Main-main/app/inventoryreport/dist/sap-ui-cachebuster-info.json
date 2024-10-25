@@ -1,0 +1,21 @@
+{
+  "i18n/i18n.properties": 1716836300875,
+  "manifest.json": 1716836636679,
+  "model/models.js": 1716836300879,
+  "controller/View1.controller.js": 1716836300875,
+  "controller/App.controller.js": 1716836300875,
+  "Component.js": 1716836300875,
+  "Component-preload.js": 1716836637101,
+  "Component-dbg.js": 1716836300875,
+  "controller/View1-dbg.controller.js": 1716836300875,
+  "controller/App-dbg.controller.js": 1716836300875,
+  "model/models-dbg.js": 1716836300879,
+  "view/View1.view.xml": 1716836300879,
+  "view/App.view.xml": 1716836300879,
+  "css/style.css": 1716836300875,
+  "Fragments/plant.fragment.xml": 1716836300875,
+  "Fragments/materialGroup.fragment.xml": 1716836300875,
+  "Fragments/material.fragment.xml": 1716836300875,
+  "Fragments/companyCode.fragment.xml": 1716836300875,
+  "index.html": 1716836300875
+}

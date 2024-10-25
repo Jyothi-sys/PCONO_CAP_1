@@ -1,0 +1,220 @@
+<mvc:View
+    controllerName="materialplantlink.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ff="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page title="{i18n>title}">
+                    <fb:FilterBar
+                        id="filterbar"
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                        search="onGoToReport"
+                        showClearOnFB="true"
+                        clear="onPressClear"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                    >
+                        <fb:filterGroupItems>
+                        
+                            <fb:FilterGroupItem
+                                name="sales_org"
+                                label="{i18n>salesOrg}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_salesorg"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenSalesOrgFragment"
+                                        placeholder="{i18n>salesOrg}"
+                                        tokenUpdate="onTokenCompanyCodeChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                                    <fb:FilterGroupItem
+                                name="dist_channel"
+                                label="{i18n>dist_channel}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_distributionChnl"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenDCFragment"
+                                        placeholder="{i18n>dist_channel}"
+                                        tokenUpdate="onTokenCompanyCodeChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="plant"
+                                label="{i18n>plant}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Plant"                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenPlantFragment"
+                                        placeholder="{i18n>plant}"
+                                        tokenUpdate="onTokenPlantChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            
+
+
+                            <fb:FilterGroupItem
+                                name="material_group"
+                                label="{i18n>Material_group}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_MaterialGroup"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenMaterialGroupFragment"
+                                        placeholder="{i18n>Material_group}"
+                                        tokenUpdate="onTokenMatGroupChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                           
+
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+
+                    <content>
+                    <Table
+                          mode="MultiSelect"
+                            selectionChange="onselectionChange"
+                            alternateRowColors="true"
+                            backgroundDesign="Solid"
+                            sticky="ColumnHeaders"
+                            headerText="Material Plant Link Report"
+                            items="{tableModel>/}"
+                            autoPopinMode="false"
+                            contextualWidth="Auto"
+                            id="exportTable"
+                            inset="false"
+                            growing="true"
+                            growingThreshold="500"
+                            growingScrollToLoad="false"
+                        >
+                           <headerToolbar>
+                                <OverflowToolbar>
+                                    <ToolbarSpacer />
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onExportSelected"
+                                    />
+	                                <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleSortButtonPressed"
+                                    />
+                                    <Button                                        
+                                        text ="Create"
+                                        press="onOpenCreateMatPlantFragment"
+                                    />
+                                  
+                                    <Button                                        
+                                        text ="Edit"
+                                        press="onEditTableRow"
+                                        id="editModeButton"
+                                    />
+                                       <Button                                        
+                                        text ="Delete"
+                                        press="onDelete"
+                                        id="deleteModeButton"
+                                    />                                   
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column
+                                    
+                                    minScreenWidth="Tablet"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>salesOrg}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        wrapping="true"
+                                        text="{i18n>dist_channel}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>plant}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Material_group}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                              
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{tableModel>sales_org}"/>
+                                        <Text text="{tableModel>dist_channel}"/>
+                                        <Text text="{tableModel>plant}"/>
+                                        <Text text="{tableModel>material_group}"/>                                                                                
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

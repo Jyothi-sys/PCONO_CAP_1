@@ -1,0 +1,121 @@
+{
+    "name": "PCONAMain",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "engines": {
+        "node": "^18.18.0"
+    },
+    "dependencies": {
+        "@sap-cloud-sdk/http-client": "^3.4.0",
+        "@sap/cds": "^7",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.7",
+        "@sap/hana-client": "^2.15.19",
+        "@sap/hdbext": "^7.7.1",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "hdb": "^0.19.0",
+        "passport": "^0",
+        "sap-hdbext-promisfied": "^2.202208.1"
+    },
+    "devDependencies": {
+        "@sap/hdi-deploy": "4.5.3",
+        "@sap/ux-specification": "^1.84.88",
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "undeploy": "cf undeploy PCONA-Main --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-inventoryreport": "cds watch --open inventoryreport/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-xrefcrossreference": "cds watch --open xrefcrossreference/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pivs": "cds watch --open pivs/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-bypromise": "cds watch --open bypromise/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-materialplantlink": "cds watch --open materialplantlink/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-masterdata": "cds watch --open masterdata/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-by_plant_proposal": "cds watch --open by_plant_proposal/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "es2020": true,
+            "node": true,
+            "jest": true,
+            "mocha": true
+        },
+        "globals": {
+            "SELECT": true,
+            "INSERT": true,
+            "UPDATE": true,
+            "DELETE": true,
+            "CREATE": true,
+            "DROP": true,
+            "CDL": true,
+            "CQL": true,
+            "CXL": true,
+            "cds": true
+        },
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
+        }
+    },
+    "cds": {
+        "requires": {
+            "db": {
+                "kind": "hana-cloud"
+            },
+            "auth": {
+                "strategy": "jwt",
+                "kind": "xsuaa",
+                "[development]": {
+                    "strategy": "mock",
+                    "users": {
+                        "kanchan.a.kanchan@capgemini.com": {
+                            "roles": [
+                                "tisAdmin"
+                            ]
+                        },
+                        "kotyada-vara.jyothi@capgemini.com": {
+                            "roles": [
+                                "tisAdmin"
+                            ]
+                        }
+                    }
+                }
+            },
+            "uaa": {
+                "kind": "xsuaa"
+            },
+            "dest": {
+                "kind": "destination",
+                "credential": {
+                    "destination": "PCONA-Main-destination-service"
+                }
+            },
+            "odata": {
+                "kind": "odata",
+                "credentials": {
+                    "destination": "Panasonic_S4HANABasicAuth"
+                }
+            },
+            "conn": {
+                "kind": "connectivity"
+            },
+            "ZPTP_CDS_INVREC_CDS": {
+                "kind": "odata",
+                "credentials": {
+                    "path": "/sap/opu/odata/sap/ZPTP_CDS_INVREC_CDS",
+                    "destination": "Panasonic_S4HANABasicAuth"
+                }
+            }
+        }
+    },
+    "sapux": [
+        "app/inventoryreport"
+    ]
+}

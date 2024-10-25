@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog 
+		confirm="Info_1_handleSortDialogConfirm">
+		<sortItems  >
+			
+			<!-- <ViewSettingsItem text="{i18n>client}" key="client"  /> -->
+			<ViewSettingsItem text="{i18n>reply_id}" key="reply_id"  />
+			<ViewSettingsItem text="{i18n>sales_company_code}" key="sales_company_code"  />
+			<ViewSettingsItem text="{i18n>issued_date}" key="issued_date"  />
+			<ViewSettingsItem text="{i18n>unified_model_number}" key="unified_model_number"  />
+			<ViewSettingsItem text="{i18n>suplier_code}" key="suplier_code"  />
+			<ViewSettingsItem text="{i18n>factory_code}" key="factory_code"  />
+			<ViewSettingsItem text="{i18n>department_code}" key="department_code"  />
+			<ViewSettingsItem text="{i18n>legacy_color_code}" key="legacy_color_code"  />
+			<ViewSettingsItem text="{i18n>brand_code}" key="brand_code"  />			
+			<ViewSettingsItem text="{i18n>old_model_number}" key="old_model_number"  />
+			<ViewSettingsItem text="{i18n>h_s_code}" key="h_s_code"  />
+			<ViewSettingsItem text="{i18n>account_category}" key="account_category"  />
+			<ViewSettingsItem text="{i18n>overseas_category}" key="overseas_category"  />
+			<ViewSettingsItem text="{i18n>advertisement_id}" key="advertisement_id"  />
+			<ViewSettingsItem text="{i18n>temp_model_id}" key="temp_model_id"  />
+			<ViewSettingsItem text="{i18n>min_accept_quantity}" key="min_accept_quantity"  />
+			<ViewSettingsItem text="{i18n>min_accept_quantity_unit_code}" key="min_accept_quantity_unit_code"  />
+			<ViewSettingsItem text="{i18n>printed_model_number}" key="printed_model_number"  />
+			<ViewSettingsItem text="{i18n>kit_id}" key="kit_id"  />			
+			<ViewSettingsItem text="{i18n>e_l_id}" key="e_l_id"  />
+			<ViewSettingsItem text="{i18n>product_name}" key="product_name"  />
+			<ViewSettingsItem text="{i18n>department_name}" key="department_name"  />
+			<ViewSettingsItem text="{i18n>personal_name}" key="personal_name"  />
+			<ViewSettingsItem text="{i18n>parent_code}" key="parent_code"  />
+			<ViewSettingsItem text="{i18n>upc}" key="upc"  />
+			<ViewSettingsItem text="{i18n>fiscal_year}" key="fiscal_year"  />
+			<ViewSettingsItem text="{i18n>sales_date_new_model}" key="sales_date_new_model"  />
+			<ViewSettingsItem text="{i18n>filler_1}" key="filler_1"  />
+			<ViewSettingsItem text="{i18n>revised_id}" key="revised_id"  />			
+			<ViewSettingsItem text="{i18n>filler_2}" key="filler_2"  />
+			<ViewSettingsItem text="{i18n>delete_indicator}" key="delete_indicator"  />
+			<ViewSettingsItem text="{i18n>actual_message_issued_date}" key="actual_message_issued_date"  />
+			<ViewSettingsItem text="{i18n>created_on}" key="created_on"  />
+			<ViewSettingsItem text="{i18n>changed_on}" key="changed_on"  />
+			<ViewSettingsItem text="{i18n>change_time}" key="change_time"  />
+			
+			
+			
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

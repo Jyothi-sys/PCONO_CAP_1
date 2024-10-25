@@ -1,0 +1,179 @@
+{
+    "Result": [{
+        "okey": "reply_id",
+        "otext": "Reply Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_company_code",
+        "otext": "Sales Company Code",
+        "visible":true,
+        "width":"8rem"
+       },{
+        "okey": "issued_date",
+        "otext": "Issued Date",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "unified_model_number",
+        "otext": "Unified Model Number",
+        "visible":true,
+        "width":"8rem"
+       },{
+        "okey": "suplier_code",
+        "otext": "Suplier Code",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "factory_code",
+        "otext": "Factory Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "department_code",
+        "otext": "Department Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "legacy_color_code",
+        "otext": "Legacy Color Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "brand_code",
+        "otext": "Brand Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "old_model_number",
+        "otext": "Old Model Number",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "h_s_code",
+        "otext": "H S Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "account_category",
+        "otext": "Account Category",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "overseas_category",
+        "otext": "Overseas Category",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "advertisement_id",
+        "otext": "Advertisement Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "temp_model_id",
+        "otext": "Temp Model Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "min_accept_quantity",
+        "otext": "Min Accept Quantity",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "min_accept_quantity_unit_code",
+        "otext": "Min Accept Quantity Unit Code",
+        "visible":true,
+        "width":"10rem"
+       },{
+        "okey": "printed_model_number",
+        "otext": "Printed Model Number",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "kit_id",
+        "otext": "Kit Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "e_l_id",
+        "otext": "E L Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "product_name",
+        "otext": "Product Name",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "department_name",
+        "otext": "Department Name",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "personal_name",
+        "otext": "Personal Name",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "parent_code",
+        "otext": "Parent Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "upc",
+        "otext": "UPC",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "fiscal_year",
+        "otext": "Fiscal Year",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_date_new_model",
+        "otext": "Sales Date New Model",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "filler_1",
+        "otext": "Filler 1",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "revised_id",
+        "otext": "Revised Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler_2",
+        "otext": "Filler 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "delete_indicator",
+        "otext": "Delete Indicator",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "actual_message_issued_date",
+        "otext": "Actual Message Issued Date",
+        "visible":false,
+        "width":"10rem"
+       },{
+        "okey": "created_on",
+        "otext": "Created On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "changed_on",
+        "otext": "Changed On",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "change_time",
+        "otext": "Changed Time",
+        "visible":false,
+        "width":"6rem"
+       }
+    ]
+   }

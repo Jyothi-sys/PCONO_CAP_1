@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Global_Group_Code}"
+  liveChange="onSearchglobal_group_code_TrpPart"
+  confirm="onSelectionglobal_group_code_TrpPart"
+  cancel="onDialogClose_trdPart"
+  multiSelect="true"
+  items="{global_group_codeTrdPartData>/}">
+
+<StandardListItem 
+
+title="{path: 'global_group_codeTrdPartData>global_group_code'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

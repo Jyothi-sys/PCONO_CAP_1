@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>issued_date}"
+  liveChange="onSearchIssuedDate_Info1"
+  confirm="onSelectionIssueDate_Info1"
+  cancel="onDialogClose_Info1"
+  multiSelect="true"
+  items="{issued_dateInfo1Data>/}">
+
+<StandardListItem 
+
+title="{path: 'issued_dateInfo1Data>issued_date'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

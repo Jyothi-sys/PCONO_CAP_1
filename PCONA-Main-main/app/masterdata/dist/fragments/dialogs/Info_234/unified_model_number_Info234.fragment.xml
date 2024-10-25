@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Unified_Model_Number}"
+  liveChange="onSearchunified_model_number_Info234"
+  confirm="onSelectionunified_model_number_Info234"
+  cancel="onDialogClose_Info234"
+  multiSelect="true"
+  items="{unified_model_numberInfo234Data>/}">
+
+<StandardListItem 
+
+title="{path: 'unified_model_numberInfo234Data>unified_model_number'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

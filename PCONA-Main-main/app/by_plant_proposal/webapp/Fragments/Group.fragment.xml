@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Group}"
+  liveChange="onSearchGroup"
+  confirm="onSelectionGroup"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{GroupData>/}">
+
+<StandardListItem 
+
+title="{path: 'GroupData>Group'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

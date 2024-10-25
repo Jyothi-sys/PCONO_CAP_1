@@ -1,0 +1,373 @@
+<mvc:View controllerName="bypromise.controller.View1"    
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ff="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page title="{i18n>title}">
+                    <fb:FilterBar
+                        id="filterbar"
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                        search="onGoToReport"
+                        showClearOnFB="true"
+                        clear="onPressClear"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                    >
+                        <fb:filterGroupItems>
+                          <!-- <fb:FilterGroupItem
+                                name="indicator"
+                                label="{i18n>IndicatorI_P}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                	<Select  id="id_Indicator"	forceSelection="false" change="handleChangeIndicator">
+					<core:Item key="I" text="I" />
+                <core:Item key="P" text="P" />
+                <core:Item key="" text="" />
+				</Select>
+                         
+                                </fb:control>
+                            </fb:FilterGroupItem> -->
+
+                        
+
+                            <fb:FilterGroupItem
+                                name="transmissionDate"
+                                label="{i18n>TransmissionDate}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <DateRangeSelection
+                                        required="true"
+                                        id="id_datePicker1"
+                                        placeholder="Select Date"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeDate"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>                           
+
+                                <fb:FilterGroupItem
+                                name="so_model"
+                                label="{i18n>Material}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Material"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenMaterialFragment"
+                                        placeholder="{i18n>Material}"
+                                        tokenUpdate="onTokenMaterialChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="salesOrder"
+                                label="{i18n>SalesOrder}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_SalesOrder"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenSalesOrderFragment"
+                                        placeholder="{i18n>SalesOrder}"
+                                        tokenUpdate="onTokenSalesOrderChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+
+                            <!-- <fb:FilterGroupItem
+                                name="plant"
+                                label="{i18n>Plant}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            > -->
+                                <!-- <fb:control>
+                                    <MultiInput
+                                        id="id_Plant"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenPlantFragment"
+                                        placeholder="{i18n>Plant}"
+                                        tokenUpdate="onTokenPlantChange"
+                                    />
+                                </fb:control> -->
+                            <!-- </fb:FilterGroupItem> -->
+
+                        
+
+                            
+
+                            <fb:FilterGroupItem
+                                name="status"
+                                label="{i18n>Status}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                	<Select  id="id_PIVSStatus"	forceSelection="false" change="handleChangeStatus">
+					<core:Item key="Success" text="Success" />
+                <core:Item key="Failed" text="Failed" />
+                <core:Item key="Reported_to_IT" text="Reported to IT" />
+				</Select>
+                         
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+
+                    <content>
+                        <Table
+                            alternateRowColors="true"
+                            backgroundDesign="Solid"
+                            mode="MultiSelect"
+                            selectionChange="onselectionChange"
+                            sticky="ColumnHeaders"
+                            headerText="{i18n>BYPROMISEStatus}"
+                            items="{tableModel>/}"
+                            autoPopinMode="false"
+                            contextualWidth="Auto"
+                            id="PIVSTable"
+                            inset="false"
+                            growing="true"
+                            growingThreshold="20"
+                            growingScrollToLoad="false"
+                        >
+
+                        <headerToolbar>
+                                <OverflowToolbar>
+                                    <ToolbarSpacer />
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onExportSelected"
+                                    />
+	                                <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleSortButtonPressed"
+                                    />
+
+                                      <Button                                        
+                                        text ="Edit"
+                                        press="onEditTableRow"
+                                        id="editModeButton"
+                                    />                             
+                                </OverflowToolbar>
+                            </headerToolbar>
+                           
+                            <columns>
+                              <!-- <Column
+                                    
+                                    minScreenWidth="Tablet"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>IndicatorI_P}"
+                                    />
+                                </Column> -->
+                                  <Column
+                                     
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>TransmissionDate}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                <Column                                     
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Timestamp}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+
+                                <Column
+                                    
+                                    minScreenWidth="Tablet"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>SalesOrder}"
+                                    />
+                                </Column>
+                                <Column
+                                                                     
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        wrapping="true"
+                                        text="{i18n>ItemNumber}"
+                                    />
+                                </Column>
+                                   <Column
+                                                                     
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        wrapping="true"
+                                        text="{i18n>ScheduleLineNo}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Material}"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Plant}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>ConfirmQua}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                                 <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>UOM}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                    wrapping="true"
+                                        design="Bold"
+                                        text="{i18n>ConfirmDate}"
+                                    />
+                                </Column>
+                              
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Status}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                                <Column
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Message}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                               
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <!-- mallikarjuna changed on 03-02-2024 -->
+                                        <!-- <Text text="{tableModel>transmissionDate}"/> -->
+                                        <Text text="{
+                                            path: 'tableModel>transmissionDate',
+                                            type: 'sap.ui.model.type.Date',
+                                            formatOptions: {
+                                                pattern: 'MM-dd-yyyy'
+                                                
+                                            }
+			                            }"/>
+                                        <Text text="{tableModel>timestamp}"/>                                        
+                                        <Text text="{tableModel>salesOrder}"/>                                        
+                                        <Text text="{tableModel>itemNumber}"/>
+                                        <Text text="{tableModel>scheduledLineNo}"/>
+                                        <Text text="{tableModel>material}"/>
+                                        <Text text="{tableModel>plant}"/>
+                                        <Text text="{tableModel>confirmQuantity}"/>
+                                        <Text text="{tableModel>uom}"/>                                        
+                                        <Text text="{tableModel>confirmDate}"/>                                        
+                                        <Text text="{tableModel>status}"/>
+                                        <Text text="{tableModel>message}"/>                                                                
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
+
+    

@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+    <!-- id="helloDialog" -->
+	<Dialog
+		title="Create ">
+
+
+   <f:SimpleForm editable="true" layout="ResponsiveGridLayout"> 
+         <f:content> 
+         <Label text="{i18n>RuleID}"></Label>
+        <Input value="{createTableRow>/Identifier}"></Input>
+        <Label text="Customer"></Label>
+        <Input value="{createTableRow>/Customer}"></Input>
+        <Label text="{i18n>Delgroup}"></Label>
+        <Input value="{createTableRow>/Group}"></Input>
+        <Label text="{i18n>ShipPlant}"></Label>
+        <Input value="{createTableRow>/ShipPlant}"></Input>
+        <Label text="Days"></Label>
+        <Input value="{createTableRow>/Days}"></Input>
+
+         
+         </f:content> 
+         </f:SimpleForm> 
+
+		<beginButton>
+			<Button
+				text="Save"
+				press="onCreateSave"/>
+		</beginButton>
+        <endButton>
+			<Button
+				text="Cancel"
+				press="onDialogClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

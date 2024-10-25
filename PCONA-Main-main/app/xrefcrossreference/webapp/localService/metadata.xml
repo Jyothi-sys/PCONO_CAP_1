@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zinvbalance_Srv" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="zinvbalance_hwy905" EntityType="zinvbalance_Srv.zinvbalance_hwy905"/>
+                <EntitySet Name="zinvbalance_s4hana" EntityType="zinvbalance_Srv.zinvbalance_s4hana"/>
+                <EntitySet Name="zxref_zone" EntityType="zinvbalance_Srv.zxref_zone"/>
+                <EntitySet Name="current_inventory" EntityType="zinvbalance_Srv.current_inventory"/>
+                <FunctionImport Name="zinv_count" Function="zinvbalance_Srv.zinv_count"/>
+                <FunctionImport Name="zinv_difference" Function="zinvbalance_Srv.zinv_difference"/>
+                <FunctionImport Name="zinv_delete" Function="zinvbalance_Srv.zinv_delete"/>
+                <FunctionImport Name="purge" Function="zinvbalance_Srv.purge"/>
+                <FunctionImport Name="current_inv" Function="zinvbalance_Srv.current_inv"/>
+                <FunctionImport Name="zinv_file" Function="zinvbalance_Srv.zinv_file"/>
+                <FunctionImport Name="zxref_create" Function="zinvbalance_Srv.zxref_create"/>
+                <FunctionImport Name="zxref_delete" Function="zinvbalance_Srv.zxref_delete"/>
+                <FunctionImport Name="zxref_read" Function="zinvbalance_Srv.zxref_read"/>
+            </EntityContainer>
+            <EntityType Name="zinvbalance_hwy905">
+                <Key>
+                    <PropertyRef Name="date"/>
+                    <PropertyRef Name="companycode"/>
+                    <PropertyRef Name="plant"/>
+                    <PropertyRef Name="material"/>
+                    <PropertyRef Name="filename"/>
+                </Key>
+                <Property Name="date" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="dcnumber_hwy905" Type="Edm.String" MaxLength="4"/>
+                <Property Name="warehouse_hwy905" Type="Edm.String" MaxLength="4"/>
+                <Property Name="companycode" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="7" Nullable="false"/>
+                <Property Name="material" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="quantity_hwy905" Type="Edm.String" MaxLength="10"/>
+                <Property Name="sender_partner_name" Type="Edm.String" MaxLength="15"/>
+                <Property Name="timestamp" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="filename" Type="Edm.String" MaxLength="100" Nullable="false"/>
+            </EntityType>
+            <EntityType Name="zinvbalance_s4hana">
+                <Key>
+                    <PropertyRef Name="inventory_date"/>
+                    <PropertyRef Name="companycode"/>
+                    <PropertyRef Name="plant"/>
+                    <PropertyRef Name="material"/>
+                </Key>
+                <Property Name="inventory_date" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="companycode" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="material" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="material_group" Type="Edm.String" MaxLength="10"/>
+                <Property Name="product_hierarchy" Type="Edm.String" MaxLength="18"/>
+                <Property Name="current_inventory" Type="Edm.String" MaxLength="10"/>
+                <Property Name="unit_of_measure" Type="Edm.String" MaxLength="2"/>
+                <Property Name="material_description" Type="Edm.String" MaxLength="200"/>
+                <Property Name="sap_unrestricted_quantity" Type="Edm.String" MaxLength="10"/>
+                <Property Name="sap_qa_stock" Type="Edm.String" MaxLength="10"/>
+                <Property Name="sales_order_stock" Type="Edm.String" MaxLength="10"/>
+                <Property Name="open_deliveries" Type="Edm.String" MaxLength="10"/>
+                <Property Name="sap_material_moving_avg_price" Type="Edm.String" MaxLength="10"/>
+                <Property Name="created_on" Type="Edm.String" MaxLength="8"/>
+                <Property Name="created_by" Type="Edm.String" MaxLength="20"/>
+            </EntityType>
+            <EntityType Name="zxref_zone">
+                <Key>
+                    <PropertyRef Name="plant"/>
+                </Key>
+                <Property Name="plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="companycode" Type="Edm.String" MaxLength="4"/>
+                <Property Name="dc" Type="Edm.String" MaxLength="4"/>
+                <Property Name="warehouse_hwy905" Type="Edm.String" MaxLength="4"/>
+                <Property Name="partner_id" Type="Edm.String" MaxLength="10"/>
+                <Property Name="zone" Type="Edm.String" MaxLength="10"/>
+            </EntityType>
+            <EntityType Name="current_inventory">
+                <Key>
+                    <PropertyRef Name="CompanyCde"/>
+                    <PropertyRef Name="companycode"/>
+                </Key>
+                <Property Name="CompanyCde" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="companycode" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="InventorySnapshotDate" Type="Edm.Date"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40"/>
+                <Property Name="MaterialGroup" Type="Edm.String" MaxLength="9"/>
+                <Property Name="ProductHierarchy" Type="Edm.String" MaxLength="18"/>
+                <Property Name="uom" Type="Edm.String" MaxLength="3"/>
+                <Property Name="SAPUnrestrictedQty" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="SAPQAStock" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="SalesorderStock" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="SAPOpendelquantity" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="inventoryvar" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="currency" Type="Edm.String" MaxLength="5"/>
+                <Property Name="SAPMatMovAvgprice" Type="Edm.Decimal" Scale="3" Precision="12"/>
+                <Property Name="Material_decription" Type="Edm.String" MaxLength="40"/>
+                <Property Name="createdon" Type="Edm.Date"/>
+                <Property Name="createdby" Type="Edm.String" MaxLength="12"/>
+            </EntityType>
+            <Function Name="zinv_count" IsBound="false" IsComposable="false">
+                <Parameter Name="date" Type="Edm.String"/>
+                <Parameter Name="sender_partner_name" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zinv_difference" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zinv_delete" IsBound="false" IsComposable="false">
+                <Parameter Name="date" Type="Edm.String"/>
+                <Parameter Name="sender_partner_name" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="purge" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="current_inv" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zinv_file" IsBound="false" IsComposable="false">
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zxref_create" IsBound="false" IsComposable="false">
+                <Parameter Name="plant" Type="Edm.String"/>
+                <Parameter Name="companycode" Type="Edm.String"/>
+                <Parameter Name="dc" Type="Edm.String"/>
+                <Parameter Name="warehouse_hwy905" Type="Edm.String"/>
+                <Parameter Name="partner_id" Type="Edm.String"/>
+                <Parameter Name="zone" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zxref_delete" IsBound="false" IsComposable="false">
+                <Parameter Name="plant" Type="Edm.String"/>
+                <Parameter Name="partner_id" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+            <Function Name="zxref_read" IsBound="false" IsComposable="false">
+                <ReturnType Type="Collection(Edm.String)" Nullable="false"/>
+            </Function>
+            <Annotations Target="zinvbalance_Srv.zinvbalance_hwy905/timestamp">
+                <Annotation Term="Core.Computed" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

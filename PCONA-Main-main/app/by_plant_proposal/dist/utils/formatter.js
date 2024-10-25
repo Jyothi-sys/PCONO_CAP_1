@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/format/DateFormat"],function(t){"use strict";return{formatTime:function(t){if(t){var r=new Date(t.ms).toISOString().slice(11,19);return r}},formatDate:function(t){if(t){return t.toLocaleDateString()+" "+t.toString().substr(16,8)}}}});

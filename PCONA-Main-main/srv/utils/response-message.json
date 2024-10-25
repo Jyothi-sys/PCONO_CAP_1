@@ -1,0 +1,145 @@
+{
+    "Errors": 
+    {
+   "100": {
+        "error_code" : 100,
+        "msg_text" : "Invalid selection critriea"
+    
+    },
+    "101":{
+        "error_code" : 101,
+        "msg_text" : "Invalid Email Id"
+    },
+   
+    "424":{
+        "error_code" : 424,
+        "msg_text" : "Mail Failed"
+    },
+    "425":{
+        "error_code" : 425,
+        "msg_text" : "Incorrect OTP"
+    },
+    "426":{
+        "error_code" : 426,
+        "msg_text" : "Onboarding Request Exist"
+    },
+    "427":{
+        "error_code" : 427,
+        "msg_text" : "Registration is already Exist for this Company"
+    },
+
+    "428":{
+        "error_code" : 428,
+        "msg_text" : "Email Id for this Application Number does not Exist"
+    },
+    "429":{
+        "error_code" : 429,
+        "msg_text" : "Multiple Records exist for the request. Please check with Administrator."
+    },
+    "430":{
+        "error_code" : 430,
+        "msg_text" : "OTP Expired"
+    },
+    "431":{
+        "error_code" : 431,
+        "msg_text" : "Updating Comments Failed"
+    },
+    "432":{
+        "error_code" : 432,
+        "msg_text" : "Error in Updating status"
+    },
+    "433":{
+        "error_code" : 433,
+        "msg_text" : "Error in selection critriea"
+    },
+    "434":{
+        "error_code" : 434,
+        "msg_text" : "Error in updating status for clientid in Entity TPOnbrd_Requests"
+    },
+    "435":{
+        "error_code" : 435,
+        "msg_text" : "Client Id Already Exists"
+    },
+    "436":{
+        "error_code" : 436,
+        "msg_text" : "Error in updating status for clientid in Entity TP_MasterData"
+    },
+    "437":{
+        "error_code" : 437,
+        "msg_text" : "Error in Modifying consent"
+    },
+    "438":{
+        "error_code" : 438,
+        "msg_text" : "Error in Terminating consent"
+    },
+
+    "439":{
+        "error_code" : 439,
+        "msg_text" : "An Error occured while creating consent"
+    },
+    "440":{
+        "error_code" : 440,
+        "msg_text" : "Error while updating consent status"
+    },
+    "441":{
+        "error_code" : 440,
+        "msg_text" : "Okta Consent string match failed"
+    },
+    "442":{
+        "error_code" : 442,
+        "msg_text" : "Please pass Subscription Id"
+    },
+    "443":{
+        "error_code" : 443,
+        "msg_text" : "Notification URI call failed!"
+    },
+    "444":{
+        "error_code" : 444,
+        "msg_text" : "No data for selected CustomerId and Contract Acc"
+    },
+    "445":{
+    "error_code":"445",
+    "msg_text":"No Active Consent Found"
+    },
+    "446":{
+    "error_code":"446",
+    "msg_text":"Error in connecting to S4 Services"
+    },
+    "447":{
+    "error_code":"447",
+    "msg_text":"No Scope found in Okta for the consents"
+    },
+    "448":{
+        "error_code":"448",
+        "msg_text":"An Error occured in executing API"
+        },
+    "449":{
+        "error_code":"449",
+         "msg_text":"Error while retrieving Obscured IDs"
+          },
+    "450":{
+            "error_code":"450",
+             "msg_text":"Third party is not onboarded or active"
+        },
+    "451":{
+            "error_code":"451",
+             "msg_text":"An error occured in CPI service"
+        }
+        
+
+
+
+    
+
+    
+    },
+
+    "Success":
+    {
+        "201":{
+        "success_code" : 201,
+        "status" : "Success",
+        "msg_text" : "Mail Sent"
+        }
+    }
+}

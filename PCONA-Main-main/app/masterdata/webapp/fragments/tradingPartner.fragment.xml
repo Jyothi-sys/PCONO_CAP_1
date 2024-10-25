@@ -1,0 +1,294 @@
+<core:FragmentDefinition
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <VBox>
+                            <fb:FilterBar
+                        id="id_fb_TrdPart"
+                        persistencyKey="myPersKeyTrdPart"
+                        useToolbar="false"
+                        search="onGoToReportTrdPart"
+                        showClearOnFB="true"
+                        clear="onClearTrdPart"
+                        filterChange=".onFilterChangeTrdPart"
+                        afterVariantLoad=".onAfterVariantLoadTrdPart"
+                    >
+                        <fb:filterGroupItems>
+
+                            <!-- <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed On}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <DateRangeSelection
+                                        
+                                        id="id_datePickerTrdPart"
+                                        placeholder="{i18n>Changed On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleDateChangedOnTrpPart"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem> -->
+
+                           <fb:FilterGroupItem
+                                name="Customer Number"
+                                label="{i18n>Customer_Number}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_customer_number_TrdPart"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpencustomer_numberFragment_TrpPart"
+                                        placeholder="{i18n>Customer_Number}"
+                                        tokenUpdate="onTokencustomer_numberChangeTrdPart"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>    
+
+                         
+
+                            <fb:FilterGroupItem
+                                name="Company Class TP"
+                                label="{i18n>Company_Class}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_company_class_TrdPart"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpencompany_classFragment_TrpPart"
+                                        placeholder="{i18n>Company_Class}"
+                                        tokenUpdate="onTokencompany_classChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Area"
+                                label="{i18n>Area}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_area_TrdPart"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenareaFragment_TrpPart"
+                                        placeholder="{i18n>Area}"
+                                        tokenUpdate="onTokenareaChangeTP"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Country Code"
+                                label="{i18n>Country_Code}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_country_code_TrdPart"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpencountry_codeFragment_TrpPart"
+                                        placeholder="{i18n>Country_Code}"
+                                        tokenUpdate="onTokencountry_codeChangeTrdPart"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                             <fb:FilterGroupItem
+                                name="Global Group Code"
+                                label="{i18n>Global_Group_Code}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_global_group_code_TrdPart"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenglobal_group_codeFragment_TrpPart"
+                                        placeholder="{i18n>Global_Group_Code}"
+                                        tokenUpdate="onTokenglobal_group_codeChangeTrdPart"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                             <fb:FilterGroupItem
+                                name="Created On"
+                                label="{i18n>Created_On}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_TrdPart_3"
+                                        placeholder="{i18n>Created_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeCreatedOnTrpPart"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+
+                            <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed_On}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <DateRangeSelection
+                                        
+                                        id="id_datePickerTrdPart"
+                                        placeholder="{i18n>Changed_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleDateChangedOnTrpPart"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+
+                              <!-- <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed On}"
+                                groupName="Group1_TP"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_4"
+                                        placeholder="Changed On"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangedDate"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+                                              -->
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                      	<ScrollContainer
+		height="100%"
+		width="100%"
+		vertical="true"
+        horizontal="true"
+		focusable="true">
+        <content>
+        <Table
+            id="idTrdPartTable"
+            inset="false"
+            items="{TradingPartnerModel>/}"
+            columns="{columndataTrdPart>/Result}"
+        >
+            <headerToolbar>
+                                <OverflowToolbar>
+                                 <content>
+                        <Title
+                            text="{i18n>TradingPartner}"
+                            level="H2"
+                        />
+                    </content>
+                                    <ToolbarSpacer />
+                                  <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleTrdPartSortButtonPressed"
+                                    />
+
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onTrdPartExport"
+                                    />
+
+                                    <MultiComboBox
+                                        placeholder="{i18n>show_hidecolumns}"
+                                        selectionChange="handleTrdPartSelectionChange"
+                                        selectionFinish="handleTrdPartSelectionFinish"
+                                        width="30%"
+                                        items="{columndataTrdPart>/Result}"
+                                        id="id_showHideColumns"
+                                    >
+                                    
+                                        <core:Item  key="{columndataTrdPart>okey}"  text="{columndataTrdPart>otext}" />
+                                       
+                                    </MultiComboBox>
+                                </OverflowToolbar>
+                            </headerToolbar>
+            <columns>
+                <Column 
+                styleClass="{columndataTrdPart>okey}"
+                visible="{columndataTrdPart>visible}"
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    width="{columndataTrdPart>width}"
+                >
+                    <Text text="{columndataTrdPart>otext}" />
+                </Column>
+               
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <!-- <Text text="{TradingPartnerModel>client}" /> -->
+                        <Text text="{TradingPartnerModel>customer_number}" />
+                        <Text text="{TradingPartnerModel>status}" />
+                        <Text text="{TradingPartnerModel>date}" />
+                        <Text text="{TradingPartnerModel>parent_code}" />
+                        <Text text="{TradingPartnerModel>company_class}" />
+                        <Text text="{TradingPartnerModel>area}" />
+                        <Text text="{TradingPartnerModel>country_code}" />
+                        <Text text="{TradingPartnerModel>city_code}" />
+                        <Text text="{TradingPartnerModel>name1}" />
+                        <Text text="{TradingPartnerModel>name2}" />
+                        <Text text="{TradingPartnerModel>short_name}" />
+                        <Text text="{TradingPartnerModel>address_line1}" />
+                        <Text text="{TradingPartnerModel>address_line2}" />
+                        <Text text="{TradingPartnerModel>consolidated}" />
+                        <Text text="{TradingPartnerModel>telephone_number}" />
+                        <Text text="{TradingPartnerModel>fax_number}" />
+                        <Text text="{TradingPartnerModel>telex_number}" />
+                        <Text text="{TradingPartnerModel>procurement_flag}" />
+                        <Text text="{TradingPartnerModel>deletion_indicator}" />
+                        <Text text="{TradingPartnerModel>created_on}" />
+                        <Text text="{TradingPartnerModel>created_time}" />
+                        <Text text="{TradingPartnerModel>changed_on}" />
+                        <Text text="{TradingPartnerModel>change_time}" />
+                        <Text text="{TradingPartnerModel>global_group_code}" />
+                        <Text text="{TradingPartnerModel>created_by}" />
+                        <Text text="{TradingPartnerModel>changed_by}" />
+                        
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </content>
+        </ScrollContainer>
+    </VBox>
+</core:FragmentDefinition>

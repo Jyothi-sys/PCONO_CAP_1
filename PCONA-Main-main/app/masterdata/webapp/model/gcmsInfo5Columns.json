@@ -1,0 +1,205 @@
+{
+    "Result": [{
+        "okey": "sales_company_code",
+        "otext": "Sales Company Code",
+        "visible":true,
+        "width":"8rem"
+       },{
+        "okey": "unified_model_number",
+        "otext": "Unified Model Number",
+        "visible":true,
+        "width":"6rem"
+       }
+       ,{
+        "okey": "suplier_code",
+        "otext": "Suplier Code",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "package_type_code",
+        "otext": "Package Type Code",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "price_available_date",
+        "otext": "Price Available Date",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "-price_validity_date",
+        "otext": "Price Validity Date",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "end_user_code",
+        "otext": "End User Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_trade_term_code",
+        "otext": "Sales Trade Term Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_term_rate_id",
+        "otext": "Sales Term Rate Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_currency_code",
+        "otext": "Sales Currency Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "quantity_per_package",
+        "otext": "Quantity Per Package",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "quantity_per_package_per_decimal",
+        "otext": "Quantity Per Package Per Decimal",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "net_weight",
+        "otext": "Net Weight",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "gross_weight",
+        "otext": "Gross Weight",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "measurement",
+        "otext": "Measurement",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "width",
+        "otext": "Width",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "depth",
+        "otext": "Depth",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "height",
+        "otext": "Height",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "payer_code",
+        "otext": "Payer Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_basis",
+        "otext": "Sales Unit Price Basis",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_basis_dec",
+        "otext": "Sales Unit Price Basis Dec",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_unit_code",
+        "otext": "Sales Unit Price Unit Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price",
+        "otext": "Sales Unit Price",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_exchange_rate",
+        "otext": "Sales Unit Price Exchange Rate",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "price_available_date_2",
+        "otext": "Price Available Date 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "price_validity_date_2",
+        "otext": "Price Validity Date 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_2",
+        "otext": "Sales Unit Price 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "sales_unit_price_exchange_rate_2",
+        "otext": "Sales Unit Price Exchange Rate 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "tent_price_mark_1",
+        "otext": "Tent Price Mark 1",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "tent_price_mark_2",
+        "otext": "Tent Price Mark 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "route",
+        "otext": "Route",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "plu_supplier_perm_id",
+        "otext": "Plu Supplier Perm Id",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler",
+        "otext": "Filler",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "revised_flag",
+        "otext": "Revised Flag",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "filler_2",
+        "otext": "Filler 2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "delete_indicator",
+        "otext": "Delete Indicator",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "created_on",
+        "otext": "Created On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "changed_on",
+        "otext": "Changed On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "change_time",
+        "otext": "Changed Time",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "actual_message_issued_date",
+        "otext": "Actual Message Issued Date",
+        "visible":false,
+        "width":"6rem"
+       }
+    ]
+   }

@@ -1,0 +1,160 @@
+### GET the data for Open Sales order
+GET http://localhost:4004/SalesorderSrv/pivs_unprocessed_so_prodsched
+
+
+### GET the data for Sales order
+GET http://localhost:4004/SalesorderSrv/pivs_processed_salesorder_prodsched
+
+### POST the data for Sales order
+
+POST http://localhost:4004/SalesorderSrv/pivs_batch
+Content-Type: application/json
+
+{
+    "batch": [
+       {
+            "indicator": "I",
+            "transmissionDate": "07-24-2023",
+            "salesOrder": "0644",
+            "itemNumber": "13",
+            "scheduledLineNo": "13",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        },
+        {
+            "indicator": "I",
+            "transmissionDate": "09-23-2023",
+            "salesOrder": "0954",
+            "itemNumber": "14",
+            "scheduledLineNo": "14",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        },
+        {
+            "indicator": "I",
+            "transmissionDate": "09-23-2023",
+            "salesOrder": "6665",
+            "itemNumber": "14",
+            "scheduledLineNo": "14",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        }
+    ]
+}
+
+
+
+### GET the data for Sales order
+GET http://localhost:4004/SalesorderSrv/by_promise
+
+### GET the data for Sales order
+POST  http://localhost:4004/SalesorderSrv/bypromise_update
+Content-Type: application/json
+
+
+{
+            "transmissionDate": "11-02-2023",
+            "salesOrder": "0050000904",
+            "itemNumber": "000020",
+            "scheduledLineNo": "0001",
+            "material": "BY_TEST MAT2",
+            "plant": "14DM",
+            "confirmQuantity": "2.000",
+            "uom": "EA",
+            "confirmDate": "11-02-2023",
+            "status": "success1111",
+            "message": "Sales Order-0050000904 000020SuccessFully Updated111.",
+            "timestamp": "20231102112914"
+}
+
+
+### POST the data for Sales order
+POST http://localhost:4004/SalesorderSrv/bypromise_batch
+Content-Type: application/json
+
+
+{
+    "batch": [
+       {
+            
+            "transmissionDate": "07-24-2023",
+            "salesOrder": "0644",
+            "itemNumber": "13",
+            "scheduledLineNo": "13",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        },
+        {
+            
+            "transmissionDate": "09-23-2023",
+            "salesOrder": "0954",
+            "itemNumber": "14",
+            "scheduledLineNo": "14",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        },
+        {
+            
+            "transmissionDate": "09-23-2023",
+            "salesOrder": "6665",
+            "itemNumber": "14",
+            "scheduledLineNo": "14",
+            "material": "AJ-CVF50GJ",
+            "plant": "14DN",
+            "confirmQuantity": "13",
+            "uom": "EA",
+            "confirmDate": "09-21-2023",
+            "status": "Success",
+            "message": "Successful Created",
+            "timestamp": ""
+        }
+    ]
+}
+
+
+### GET the data for plant
+GET http://localhost:4004/SalesorderSrv/bypromise_by_plant
+
+
+### CREATE data for bypromise_plant
+GET http://localhost:4004/SalesorderSrv/byplant_create(Identifier='90',Customer='2343',Group='383',ShipPlant='4',Days='5')
+
+
+### Delete data for bypromise_plant
+GET http://localhost:4004/SalesorderSrv/byplant_delete(Identifier='2',ShipPlant='4',Days='5')
+
+### GET the data for Sales order
+GET http://localhost:4004/SalesorderSrv/bypromise_records
+
+### GET the data for Sales order
+GET http://localhost:4004/SalesorderSrv/pivs_records

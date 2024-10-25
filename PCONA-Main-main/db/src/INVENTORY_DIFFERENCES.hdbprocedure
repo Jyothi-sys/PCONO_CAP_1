@@ -1,0 +1,22 @@
+PROCEDURE "INVENTORY_DIFFERENCES"() 
+    LANGUAGE SQLSCRIPT 
+    SQL SECURITY INVOKER 
+    --DEFAULT SCHEMA <default_schema_name>
+    READS SQL DATA AS 
+  BEGIN 
+    /*************************************
+    Write your procedure logic
+    *************************************/
+  
+    -- SELECT t1.INVENTORY_DATE, t1.COMPANYCODE,t1.PLANT,t1.MATERIAL,
+    -- t1.MATERIAL_GROUP,t1.PRODUCT_HIERARCHY,( t1.sap_book_quantity + t1.SAP_QA_STOCK + t1.sales_order_stock) as SAP_BOOK_QUANTITY  ,t1.OPEN_DELIVERIES,
+    -- (( t1.sap_book_quantity + t1.SAP_QA_STOCK + t1.sales_order_stock) - t1.SAP_OPEN_QUANTITY ) as SAP_OPEN_QUANTITY,
+    -- t2.quantity_hwy905, (t1.SAP_BOOK_QUANTITY-t2.QUANTITY_HWY905) AS variance,
+    -- (t1.SAP_MATERIAL_MOVING_AVG_PRICE * (t1.SAP_BOOK_QUANTITY - t2.QUANTITY_HWY905)) as variance_value
+    -- FROM BTP_PANASONIC_ZINV_BALANCE_S4_HANA t1
+    -- right outer JOIN BTP_PANASONIC_ZINV_BALANCE_HWY905 t2
+    -- ON t2.DATE = t1.INVENTORY_DATE and t2.COMPANYCODE = t1.COMPANYCODE and t2.plant = t1.plant
+    -- WHERE (t1.SAP_BOOK_QUANTITY-t2.QUANTITY_HWY905) > '0'
+    -- ORDER BY variance;
+    
+  END

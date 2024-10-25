@@ -1,0 +1,158 @@
+<core:FragmentDefinition
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <VBox>
+
+        <fb:FilterBar
+                        id="id_fb_CityCode"
+                        persistencyKey="myPersKey_CityCode"
+                        useToolbar="false"
+                        search="onGoToReport_CityCode"
+                        showClearOnFB="true"
+                        clear="onClearCityCode"
+                        filterChange=".onFilterChange_CityCode"
+                        afterVariantLoad=".onAfterVariantLoad_CityCode"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
+                                name="City Code"
+                                label="{i18n>City_Code}"
+                                groupName="Group_CityCode"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                        <MultiInput
+                                        id="id_CityCodes"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenCityCodeTableFragment_CityCode"
+                                        placeholder="{i18n>City_Code}"
+                                        tokenUpdate="onTokenClientChange_CityCode"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Created On"
+                                label="{i18n>Created_On}"
+                                groupName="Group_CityCode"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_1"
+                                        placeholder="{i18n>Created_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeCreatedOnDate"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed_On}"
+                                groupName="Group_CityCode"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker2"
+                                        placeholder="{i18n>Changed_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangedOnDate"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+                              </fb:filterGroupItems>
+                    </fb:FilterBar>
+        
+        <Table
+            id="id_City_Code_Table"
+            inset="false"
+           items="{cityCode_Model>/}"
+            columns="{columndataCityCodeTable>/Result}"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title
+                            text="{i18n>City_Code_Table}"
+                            level="H2"
+                        />
+
+                        <ToolbarSpacer />
+
+                                    <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleCityTableSortButtonPressed"
+                                    />
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onCityCodeExport"
+                                    />
+
+                                    <MultiComboBox
+                                        placeholder="{i18n>show_hidecolumns}"
+                                        selectionChange="cityCodeSelectionChange"
+                                        
+                                        width="30%"
+                                        items="{columndataCityCodeTable>/Result}"
+                                        id="id_CityCodeTable"
+                                    >
+                                
+                                        <core:Item  key="{columndataCityCodeTable>okey}"  text="{columndataCityCodeTable>otext}" />
+                                       
+                                    </MultiComboBox>
+                    </content>
+               
+            </OverflowToolbar>
+			 </headerToolbar>
+            <columns>
+                <Column 
+                styleClass="{columndataCityCodeTable>okey}"
+                visible="{columndataCityCodeTable>visible}"
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                >
+                    <Text text="{columndataCityCodeTable>otext}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <Text text="{cityCode_Model>city_code}" />
+                        <Text text="{cityCode_Model>lang}" />
+                        <Text text="{cityCode_Model>area_code}" />
+                        <Text text="{cityCode_Model>country_code}" />
+                        <Text text="{cityCode_Model>city_name}" />
+                        <Text text="{cityCode_Model>short_name}" />
+                        <Text text="{cityCode_Model>created_on}" />
+                        <Text text="{cityCode_Model>created_time}" />
+                        <Text text="{cityCode_Model>changed_on}" />
+                        <Text text="{cityCode_Model>change_time}" />
+                        <Text text="{cityCode_Model>legacy_information}" />
+                        <Text text="{cityCode_Model>sap_city}" />
+                        <Text text="{cityCode_Model>created_by}" />
+                          <Text text="{cityCode_Model>changed_by}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</core:FragmentDefinition>

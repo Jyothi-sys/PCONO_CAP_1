@@ -1,0 +1,235 @@
+_schema-version: "3.1"
+ID: PCONA-Main
+description: A simple CAP project.
+version: 1.0.0
+modules:
+- name: PCONA-Main-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: PCONA-Main-db
+  - name: PCONA-Main-auth
+  - name: PCONA-Main-JobScheduler
+  - name: PCONA-Main-connectivity
+  - name: PCONA-Main-destination-service
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+  build-parameters:
+    builder: npm-ci
+- name: PCONA-Main-db-deployer
+  type: hdb
+  path: gen/db
+  requires:
+  - name: PCONA-Main-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: PCONA-Main-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: PCONA-Main-destination-service
+    parameters:
+      content-target: true
+  - name: PCONA-Main-repo-host
+    parameters:
+      service-key:
+        name: PCONA-Main_html_repo_host-key
+  - name: PCONA-Main-auth
+    parameters:
+      service-key:
+        name: PCONA-Main-auth-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: PCONA-Main_html_repo_host
+          ServiceInstanceName: PCONA-Main-html5-srv
+          ServiceKeyName: PCONA-Main_html_repo_host-key
+          sap.cloud.service: PCONA-Main
+        - Authentication: OAuth2UserTokenExchange
+          Name: PCONA-Main_uaa
+          ServiceInstanceName: PCONA-Main-auth
+          ServiceKeyName: PCONA-Main-auth-key
+          sap.cloud.service: PCONA-Main
+        existing_destinations_policy: update
+  build-parameters:
+    no-source: true
+- name: PCONA-Main-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: PCONA-Main-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - inventoryreport.zip
+      name: inventoryreport
+      target-path: resources/
+    - artifacts:
+      - xrefcrossreference.zip
+      name: xrefcrossreference
+      target-path: resources/
+    - artifacts:
+      - pivs.zip
+      name: pivs
+      target-path: resources/
+    - artifacts:
+      - bypromise.zip
+      name: bypromise
+      target-path: resources/
+    - artifacts:
+      - materialplantlink.zip
+      name: materialplantlink
+      target-path: resources/
+    - artifacts:
+      - masterdata.zip
+      name: masterdata
+      target-path: resources/
+    - artifacts:
+      - byplantproposal.zip
+      name: byplantproposal
+      target-path: resources/
+- name: inventoryreport
+  type: html5
+  path: app/inventoryreport
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: xrefcrossreference
+  type: html5
+  path: app/xrefcrossreference
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pivs
+  type: html5
+  path: app/pivs
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: bypromise
+  type: html5
+  path: app/bypromise
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: materialplantlink
+  type: html5
+  path: app/materialplantlink
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: masterdata
+  type: html5
+  path: app/masterdata
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: byplantproposal
+  type: html5
+  path: app/by_plant_proposal
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: PCONA-Main-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: PCONA-Main-JobScheduler
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      enable-xsuaa-support: true
+    service: jobscheduler
+    service-name: PCONA-Main-JobScheduler
+    service-plan: standard
+- name: PCONA-Main-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      role-collections:
+      - description: TIS Admin
+        name: tisAdmin-${space}
+        role-template-references:
+        - $XSAPPNAME.tisAdmin     
+      tenant-mode: dedicated
+      xsappname: PCONA-Main-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: PCONA-Main-auth
+    service-plan: application
+- name: PCONA-Main-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: PCONA-Main-html5-srv
+    service-plan: app-host
+- name: PCONA-Main-connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
+    service-plan: lite
+- name: PCONA-Main-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: PCONA-Main-destination-service
+    service-plan: lite
+parameters:
+  config:
+    sizeLimit: 100
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npx -p @sap/cds-dk cds build --production

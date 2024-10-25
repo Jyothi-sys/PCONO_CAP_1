@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="mdg_Srv" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="zplink" EntityType="mdg_Srv.zplink"/>
+                <FunctionImport Name="material_group" Function="mdg_Srv.material_group"/>
+            </EntityContainer>
+            <EntityType Name="zplink">
+                <Key>
+                    <PropertyRef Name="sales_org"/>
+                    <PropertyRef Name="dist_channel"/>
+                    <PropertyRef Name="plant"/>
+                    <PropertyRef Name="material_group"/>
+                    <PropertyRef Name="source_list"/>
+                    <PropertyRef Name="sales_bom"/>
+                </Key>
+                <Property Name="sales_org" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="dist_channel" Type="Edm.String" MaxLength="2" Nullable="false"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+                <Property Name="material_group" Type="Edm.String" MaxLength="9" Nullable="false"/>
+                <Property Name="source_list" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="sales_bom" Type="Edm.String" MaxLength="1" Nullable="false"/>
+                <Property Name="plant_name" Type="Edm.String" MaxLength="30"/>
+            </EntityType>
+            <Function Name="material_group" IsBound="false" IsComposable="false">
+                <Parameter Name="material_group" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Function>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

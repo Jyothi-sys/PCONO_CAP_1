@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem text="{i18n>salesOrg}" key="sales_org" selected="true" />
+			<ViewSettingsItem text="{i18n>dist_channel}" key="dist_channel" />
+			<ViewSettingsItem text="{i18n>plant}" key="plant" />
+			<ViewSettingsItem text="{i18n>Material_group}" key="material_group" />
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

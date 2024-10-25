@@ -1,0 +1,22 @@
+{
+  "css/style.css": 1716836300871,
+  "manifest.json": 1716836679955,
+  "model/models.js": 1716836300871,
+  "controller/View1.controller.js": 1716836300871,
+  "controller/App.controller.js": 1716836300871,
+  "Component.js": 1716836300871,
+  "Component-preload.js": 1716836680538,
+  "controller/View1-dbg.controller.js": 1716836300871,
+  "model/models-dbg.js": 1716836300871,
+  "controller/App-dbg.controller.js": 1716836300871,
+  "Component-dbg.js": 1716836300871,
+  "view/View1.view.xml": 1716836300871,
+  "view/App.view.xml": 1716836300871,
+  "i18n/i18n.properties": 1716836300871,
+  "Fragments/updateRow.fragment.xml": 1716836300871,
+  "Fragments/salesOrder.fragment.xml": 1716836300871,
+  "Fragments/plant.fragment.xml": 1716836300871,
+  "Fragments/material.fragment.xml": 1716836300871,
+  "Fragments/ascAndDscSort.fragment.xml": 1716836300871,
+  "index.html": 1716836300871
+}

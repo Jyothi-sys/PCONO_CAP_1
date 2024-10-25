@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>plant}"
+  liveChange="onSearchPlant"
+  confirm="onSelectionPlant"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{PlantData>/}">
+
+<StandardListItem 
+
+title="{path: 'PlantData>plant'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

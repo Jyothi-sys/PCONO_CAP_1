@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>salesOrg}"
+  liveChange="onSearchSalesOrg"
+  confirm="onSelectionSalesOrg"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{sales_OrgData>/}">
+
+<StandardListItem 
+
+title="{path: 'sales_OrgData>sales_org'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

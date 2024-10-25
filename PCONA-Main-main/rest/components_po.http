@@ -1,0 +1,14 @@
+### GET the data for Ship Plan
+GET http://localhost:4004/ComponentsSrv/jda_shipplan
+
+
+### GET the data for Ship Plan
+POST http://localhost:4004/ComponentsSrv/jda_ship_plan
+Content-Type: application/json
+
+{
+
+    "matnr"              : "material",
+    "salesord"           : "11",
+    "salesordline"       : "12"
+}

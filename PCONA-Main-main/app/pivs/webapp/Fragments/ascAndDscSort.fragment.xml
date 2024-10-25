@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog 
+		confirm="handleSortDialogConfirm">
+		<sortItems  >
+			<ViewSettingsItem text="{i18n>IndicatorI_P}" key="indicator"  />
+			<ViewSettingsItem text="{i18n>TransmissionDate}" key="transmissionDate" selected="true" />
+			<ViewSettingsItem text="{i18n>Timestamp}" key="timestamp" />
+			<ViewSettingsItem text="{i18n>SalesOrder}" key="salesOrder" />
+			<ViewSettingsItem text="{i18n>ItemNumber}" key="itemNumber" />
+			<ViewSettingsItem text="{i18n>ScheduleLineNo}" key="scheduledLineNo" />
+			<ViewSettingsItem text="{i18n>Material}" key="material" />
+			<ViewSettingsItem text="{i18n>Plant}" key="plant" />
+			<ViewSettingsItem text="{i18n>ConfirmQua}" key="confirmQuantity" />
+			<ViewSettingsItem text="{i18n>FactoryConfirmedQty}" key="factoryConfirmQuantity" />
+			<ViewSettingsItem text="{i18n>UOM}" key="uom" />
+			<ViewSettingsItem text="{i18n>ConfirmDate}" key="confirmDate" />
+			<ViewSettingsItem text="{i18n>Status}" key="status" />
+			<ViewSettingsItem text="{i18n>Message}" key="message" />
+			
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

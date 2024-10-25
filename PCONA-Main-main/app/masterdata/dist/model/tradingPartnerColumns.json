@@ -1,0 +1,134 @@
+{
+    "Result": [{
+        "okey": "customer_number",
+        "otext": "Customer Number",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "status",
+        "otext": "Status",
+        "visible":false,
+        "width":"4rem"
+       },{
+        "okey": "date",
+        "otext": "Date",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "parent_code",
+        "otext": "Parent Code",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "company_class",
+        "otext": "Company Class",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "area",
+        "otext": "Area",
+        "visible":true,
+        "width":"4rem"
+       },{
+        "okey": "country_code",
+        "otext": "Country Code",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "city_code",
+        "otext": "City Code",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "name1",
+        "otext": "Customer Name1",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "name2",
+        "otext": "Customer Name2",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "short_name",
+        "otext": "Short Name",
+        "visible":true,
+        "width":"5rem"
+       },{
+        "okey": "address_line1",
+        "otext": "Converted Name1",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "address_line2",
+        "otext": "Converted Name2",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "consolidated",
+        "otext": "Consolidated",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "telephone_number",
+        "otext": "Telephone Number",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "fax_number",
+        "otext": "Fax Number",
+        "visible":false,
+        "width":"8rem"
+       },{
+        "okey": "telex_number",
+        "otext": "Telex Number",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "procurement_flag",
+        "otext": "Procurement Flag",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "deletion_indicator",
+        "otext": "Deletion Indicator",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "created_on",
+        "otext": "Created On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "created_time",
+        "otext": "Created Time",
+        "visible":false,
+        "width":"6rem"
+       },{
+        "okey": "changed_on",
+        "otext": "Changed On",
+        "visible":true,
+        "width":"6rem"
+       },{
+        "okey": "change_time",
+        "otext": "Changed Time",
+        "visible":false,
+        "width":"6rem"
+       },{
+         "okey": "global_group_code",
+         "otext": "Global Group Code",
+         "visible":false,
+         "width":"6rem"
+        },{
+         "okey": "created_by",
+         "otext": "Created By",
+         "visible":false,
+         "width":"6rem"
+        },{
+         "okey": "changed_by",
+         "otext": "Changed By",
+         "visible":false,
+         "width":"6rem"
+        }
+    ]
+   }

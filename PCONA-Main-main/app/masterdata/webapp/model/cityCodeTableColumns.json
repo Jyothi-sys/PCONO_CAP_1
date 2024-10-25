@@ -1,0 +1,60 @@
+{
+    "Result": [{
+      "okey": "city_code",
+      "otext": "City Code",
+      "visible":true
+     },{
+        "okey": "lang",
+        "otext": "Lang",
+        "visible":true
+       },{
+        "okey": "area_code",
+        "otext": "Area Code",
+        "visible":true
+       },{
+        "okey": "country_code",
+        "otext": "Country Code",
+        "visible":true
+       },{
+        "okey": "city_name",
+        "otext": "City Name",
+        "visible":true
+       },{
+        "okey": "short_name",
+        "otext": "Short Name",
+        "visible":true
+       },{
+        "okey": "created_on",
+        "otext": "Created On",
+        "visible":true
+       },{
+        "okey": "created_time",
+        "otext": "Created Time",
+        "visible":true
+       },{
+        "okey": "changed_on",
+        "otext": "Changed On",
+        "visible":true
+       },{
+        "okey": "change_time",
+        "otext": "Change Time",
+        "visible":true
+       },{
+        "okey": "legacy_information",
+        "otext": "Legacy Information",
+        "visible":false
+       },{
+        "okey": "sap_city",
+        "otext": "SAP City",
+        "visible":false
+       },{
+         "okey": "created_by",
+         "otext": "Created By",
+         "visible":true
+        },{
+         "okey": "changed_by",
+         "otext": "Changed By",
+         "visible":true
+        }
+    ]
+   }

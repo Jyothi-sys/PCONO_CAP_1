@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Record_Type}"
+  liveChange="onSearchrecord_type_Info234"
+  confirm="onSelectionrecord_type_Info234"
+  cancel="onDialogClose_Info234"
+  multiSelect="true"
+  items="{record_typeInfo234Data>/}">
+
+<StandardListItem 
+
+title="{path: 'record_typeInfo234Data>record_type'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

@@ -1,0 +1,35 @@
+### GET the data for ZPLINK
+GET http://localhost:4004/mdgSrv/zplink
+
+### GET the data for ZPLINK
+GET http://localhost:4004/mdgSrv/zplink_records()
+Content-Type: application/json
+
+
+### GET the data for ZPLINK
+GET http://localhost:4004/mdgSrv/material_group(material_group='AB:ESG')
+
+### CREATE data for ZPLINK
+GET http://localhost:4004/mdgSrv/zplink_create(sales_org='S3',dist_channel='D2',plant='1234',material_group='AB:ESG',created_on='2023-09-15',changed_on='2023-10-12')
+
+
+### Delete data for ZPLINK
+GET http://localhost:4004/mdgSrv/zplink_delete(sales_org='S1',dist_channel='D1',plant='1234',material_group='AB:ESG')
+
+### CREATE data for citycode
+GET http://localhost:4004/mdgSrv/zcitycode_create(city_code='222',lang='en',area_code='m',country_code='k',city_name='name',short_name='',legacy_information='',sap_city='')
+
+### CREATE data for trading partner
+GET http://localhost:4004/mdgSrv/ztrdpartner_create(client='100',customer_number='23',status='S',date='2023',parent_code='102',company_class='cl',area='3',country_code='usa',city_code='c1',name1='name1',name2='name2',short_name='name3',address_line1='add1',address_line2='add2',consolidated='2',telephone_number='123',fax_number='234',telex_number='345',global_group_code='900',procurement_flag='F',deletion_indicator='D')
+
+
+### CREATE data for GCMS_1
+GET http://localhost:4004/mdgSrv/zgcms_1_create(client='100',reply_id='i',sales_company_code='200',issued_date='20230908',unified_model_number='12345678',suplier_code='3008',factory_code='2341567',department_code='123',legacy_color_code='c2',brand_code='234',old_model_number='0987890',h_s_code='1234532',account_category='1234',overseas_category='catergory',advertisement_id='2',temp_model_id='2',min_accept_quantity='1234',min_accept_quantity_unit_code='c2',printed_model_number='1234',kit_id='i',e_l_id='e',product_name='name1',department_name='name2',personal_name='name3',parent_code='code1',upc='123',fiscal_year='2023',new_model_type='m',sales_date_new_model='20230908',filler_1='1',revised_id='1234',filler_2='1234',delete_indicator='d',actual_message_issued_date='20230709')
+
+
+### CREATE data for GCMS_5
+GET http://localhost:4004/mdgSrv/zgcms_5_create(client='100',sales_company_code='1122',unified_model_number='4563789',suplier_code='987654',package_type_code='12',price_available_date='20230908',price_validity_date='20231009',end_user_code='123455',sales_trade_term_code='12345',sales_term_rate_id='1',sales_currency_code='234',quantity_per_package='7654389',quantity_per_package_per_decimal='4',net_weight='1123',gross_weight='2222',measurement='3333',width='1234',depth='2345',height='3456',payer_code='44332255',sales_unit_price_basis='12345',sales_unit_price_basis_dec='3',sales_unit_price_unit_code='12',sales_unit_price='87654',sales_unit_price_exchange_rate='123',price_available_date_2='20230908',price_validity_date_2='20231009',sales_unit_price_2='12345',sales_unit_price_exchange_rate_2='12345',tent_price_mark_1='1',tent_price_mark_2='2',route='1234',plu_supplier_perm_id='3',filler='1234',revised_flag='flag',filler_2='5436',delete_indicator='d',actual_message_issued_date='20230701')
+
+
+### CREATE data for GCMS_234
+GET http://localhost:4004/mdgSrv/zgcms_234_create(client='100',record_type='1',reply_id='3',sales_order_code='1234',issued_date='20230701',unified_model_number='12333444',suplier_code='11223344',description_1='des1',description_2='des2',description_3='des3',description_4='des4',description_5='des5',description_6='des6',description_7='des7',filler='filler1',revised_id='1123',filler_2='20230701',printer_spec_8='spec8',printer_spec_9='spec9',printer_spec_10='spec10',printer_spec_11='spec11',printer_spec_12='spec12',printer_spec_13='spec13',printer_spec_14='spec14',revised_id_3='1234',filler_3='2345',printer_spec_15='spec15',printer_spec_16='spec16',printer_spec_17='spec17',printer_spec_18='spec18',printer_spec_19='spec19',printer_spec_20='spec20',filler_4='filler4',revised_id_4='id4',filler_5='filler5',delete_indicator='i')

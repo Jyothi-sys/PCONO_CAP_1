@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog 
+		confirm="Info_5_handleSortDialogConfirm">
+		<sortItems  >
+
+			<!-- <ViewSettingsItem text="{i18n>client}" key="client"  /> -->
+			<ViewSettingsItem text="{i18n>sales_company_code}" key="sales_company_code"  />
+			<ViewSettingsItem text="{i18n>unified_model_number}" key="unified_model_number"  />
+			<ViewSettingsItem text="{i18n>suplier_code}" key="suplier_code"  />
+			<ViewSettingsItem text="{i18n>package_type_code}" key="package_type_code"  />
+			<ViewSettingsItem text="{i18n>price_available_date}" key="price_available_date"  />
+			<ViewSettingsItem text="{i18n>price_validity_date}" key="price_validity_date"  />
+			<ViewSettingsItem text="{i18n>end_user_code}" key="end_user_code"  />
+			<ViewSettingsItem text="{i18n>sales_trade_term_code}" key="sales_trade_term_code"  />
+			<ViewSettingsItem text="{i18n>sales_term_rate_id}" key="sales_term_rate_id"  />
+			<ViewSettingsItem text="{i18n>sales_currency_code}" key="sales_currency_code"  />
+			<ViewSettingsItem text="{i18n>quantity_per_package}" key="quantity_per_package"  />
+			<ViewSettingsItem text="{i18n>quantity_per_package_per_decimal}" key="quantity_per_package_per_decimal"  />
+			<ViewSettingsItem text="{i18n>net_weight}" key="net_weight"  />
+			<ViewSettingsItem text="{i18n>gross_weight}" key="gross_weight"  />
+			<ViewSettingsItem text="{i18n>measurement}" key="measurement"  />
+			<ViewSettingsItem text="{i18n>width}" key="width"  />
+			<ViewSettingsItem text="{i18n>depth}" key="depth"  />
+			<ViewSettingsItem text="{i18n>height}" key="height"  />
+			<ViewSettingsItem text="{i18n>payer_code}" key="payer_code"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_basis}" key="sales_unit_price_basis"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_basis_dec}" key="sales_unit_price_basis_dec"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_unit_code}" key="sales_unit_price_unit_code"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price}" key="sales_unit_price"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_exchange_rate}" key="sales_unit_price_exchange_rate"  />
+			<ViewSettingsItem text="{i18n>price_available_date_2}" key="price_available_date_2"  />
+			<ViewSettingsItem text="{i18n>price_validity_date_2}" key="price_validity_date_2"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_2}" key="sales_unit_price_2"  />
+			<ViewSettingsItem text="{i18n>sales_unit_price_exchange_rate_2}" key="sales_unit_price_exchange_rate_2"  />
+			<ViewSettingsItem text="{i18n>tent_price_mark_1}" key="tent_price_mark_1"  />
+			<ViewSettingsItem text="{i18n>tent_price_mark_2}" key="tent_price_mark_2"  />
+			<ViewSettingsItem text="{i18n>route}" key="route"  />
+			<ViewSettingsItem text="{i18n>plu_supplier_perm_id}" key="plu_supplier_perm_id"  />
+			<ViewSettingsItem text="{i18n>filler}" key="filler"  />
+			<ViewSettingsItem text="{i18n>revised_flag}" key="revised_flag"  />
+			<ViewSettingsItem text="{i18n>filler_2}" key="filler_2"  />
+			<ViewSettingsItem text="{i18n>delete_indicator}" key="delete_indicator"  />
+			<ViewSettingsItem text="{i18n>created_on}" key="created_on"  />
+			<ViewSettingsItem text="{i18n>changed_on}" key="changed_on"  />
+			<ViewSettingsItem text="{i18n>change_time}" key="change_time"  />
+			<ViewSettingsItem text="{i18n>actual_message_issued_date}" key="actual_message_issued_date"  />
+			
+			
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

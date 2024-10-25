@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Country_Code}"
+  liveChange="onSearchcountry_code_TrpPart"
+  confirm="onSelectioncountry_code_TrpPart"
+  cancel="onDialogClose_trdPart"
+  multiSelect="true"
+  items="{country_codeTrdPartData>/}">
+
+<StandardListItem 
+
+title="{path: 'country_codeTrdPartData>country_code'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

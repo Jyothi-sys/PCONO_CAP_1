@@ -1,0 +1,252 @@
+<core:FragmentDefinition
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <VBox>
+       
+ <fb:FilterBar
+                        id="id_fb_Info5"
+                        persistencyKey="myPersKey_Info5"
+                        useToolbar="false"
+                        search="onGoToReport_Info5"
+                        showClearOnFB="true"
+                        clear="onClear5"
+                        filterChange=".onFilterChange_Info5"
+                        afterVariantLoad=".onAfterVariantLoad_Info5"
+                    >
+                        <fb:filterGroupItems>
+                            <!-- <fb:FilterGroupItem
+                                name="Client Info5"
+                                label="{i18n>Client}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                        <MultiInput
+                                        id="id_Info5_Client"
+                                        
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenClientFragment_Info5"
+                                        placeholder="{i18n>Client}"
+                                        tokenUpdate="onTokenClientChange_Info5"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> -->
+
+
+                            <fb:FilterGroupItem
+                                name="Sales Company Code Info5"
+                                label="{i18n>Sales_Company_Code}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info5_SalesCompanyCode"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenSalesCCFragment_Info5"
+                                        placeholder="{i18n>Sales_Company_Code}"
+                                        tokenUpdate="onTokenSalesCCChange_Info5"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Unified Model Number Info5"
+                                label="{i18n>unified_model_number}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Info5_unified_model_number"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenunified_model_numberFragment_Info5"
+                                        placeholder="{i18n>unified_model_number}"
+                                        tokenUpdate="onTokenUniModNoChange_Info5"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Suplier Code Info5"
+                                label="{i18n>Suplier_Code}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                     <MultiInput
+                                        id="id_Info5_suplier_code"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpensuplier_codeFragment_Info5"
+                                        placeholder="{i18n>Suplier_Code}"
+                                        tokenUpdate="onTokensuplier_codeChange_Info5"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="Created On"
+                                label="{i18n>Created_On}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_7"
+                                        placeholder="{i18n>Created_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeCreateDateInfo5"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem>
+
+                              <fb:FilterGroupItem
+                                name="Changed On"
+                                label="{i18n>Changed_On}"
+                                groupName="Group_Info5"
+                                visibleInFilterBar="true">
+
+                                <fb:control>
+                                       <DateRangeSelection
+                                        
+                                        id="id_datePicker_8"
+                                        placeholder="{i18n>Changed_On}"
+                                        displayFormat="MM-dd-YYYY"
+                                        valueFormat="MM-dd-YYYY"
+                                        width="70%"
+                                        change="handleChangeDateInfo5"
+                                    />
+                                </fb:control>
+
+                            </fb:FilterGroupItem> 
+
+                           
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+
+	<ScrollContainer
+		height="100%"
+		width="100%"
+		vertical="false"
+        horizontal="true"
+		focusable="true">
+        <Table
+            id="idInfo_5_Table"
+            inset="false"
+        items="{Info_5_Model>/}"
+            columns="{columndataInfo_5>/Result}"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title
+                            text="{i18n>ModelPriceInformation}"
+                            level="H2"
+                        />
+                                    <ToolbarSpacer />
+                                        <Button
+						                tooltip="Sort"
+						                icon="sap-icon://sort"
+						            press="handleInfo_5_SortButtonPressed"
+                                    />
+
+                                    <Button
+                                        icon="sap-icon://excel-attachment"
+                                        press="onInfo5Export"
+                                    />
+
+                                    <MultiComboBox
+                                        placeholder="{i18n>show_hidecolumns}"
+                                        selectionChange="handle5SelectionChange"
+                                        selectionFinish="handle5SelectionFinish"
+                                        width="30%"
+                                        items="{columndataInfo_5>/Result}"
+                                        id="id_showHideColumns5"
+                                    >
+                                    <!-- selectedKeys="client,customer_number,status,date,zarea,parent_code,company_class,area,country_code,city_code,name1" -->
+                                        <core:Item  key="{columndataInfo_5>okey}"  text="{columndataInfo_5>otext}" />
+                                       
+                                    </MultiComboBox>
+
+                    </content>
+               
+            </OverflowToolbar>
+			 </headerToolbar>
+            <columns>
+                 <Column 
+                styleClass="{columndataInfo_5>okey}"
+                visible="{columndataInfo_5>visible}"
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    width="{columndataInfo_5>width}"
+                >
+                    <Text text="{columndataInfo_5>otext}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <!-- <Text text="{Info_5_Model>client}" /> -->
+                        <Text text="{Info_5_Model>sales_company_code}" />
+                        <Text text="{Info_5_Model>unified_model_number}" />
+                        <Text text="{Info_5_Model>suplier_code}" />
+                        <Text text="{Info_5_Model>package_type_code}" />
+                        <Text text="{Info_5_Model>price_available_date}" />
+                        <Text text="{Info_5_Model>price_validity_date}" />
+                        <Text text="{Info_5_Model>end_user_code}" />
+                        <Text text="{Info_5_Model>sales_trade_term_code}" />
+                        <Text text="{Info_5_Model>sales_term_rate_id}" />
+                        <Text text="{Info_5_Model>sales_currency_code}" />
+                        <Text text="{Info_5_Model>quantity_per_package}" />
+                        <Text text="{Info_5_Model>quantity_per_package_per_decimal}" />
+                        <Text text="{Info_5_Model>net_weight}" />
+                        <Text text="{Info_5_Model>gross_weight}" />
+                        <Text text="{Info_5_Model>measurement}" />
+                        <Text text="{Info_5_Model>width}" />
+                        <Text text="{Info_5_Model>depth}" />
+                        <Text text="{Info_5_Model>height}" />
+                        <Text text="{Info_5_Model>payer_code}" />
+                        <Text text="{Info_5_Model>sales_unit_price_basis}" />
+                        <Text text="{Info_5_Model>sales_unit_price_basis_dec}" />
+                        <Text text="{Info_5_Model>sales_unit_price_unit_code}" />
+                        <Text text="{Info_5_Model>sales_unit_price}" />
+                        <Text text="{Info_5_Model>sales_unit_price_exchange_rate}" />
+                        <Text text="{Info_5_Model>price_available_date_2}" />
+                        <Text text="{Info_5_Model>price_validity_date_2}" />
+                        <Text text="{Info_5_Model>sales_unit_price_2}" />
+                        <Text text="{Info_5_Model>sales_unit_price_exchange_rate_2}" />
+                        <Text text="{Info_5_Model>tent_price_mark_1}" />
+                        <Text text="{Info_5_Model>tent_price_mark_2}" />
+                        <Text text="{Info_5_Model>route}" />
+                        <Text text="{Info_5_Model>plu_supplier_perm_id}" />
+                        <Text text="{Info_5_Model>filler}" />
+                        <Text text="{Info_5_Model>revised_flag}" />
+                        <Text text="{Info_5_Model>filler_2}" />
+                        <Text text="{Info_5_Model>delete_indicator}" />
+                        <Text text="{Info_5_Model>created_on}" />
+                        <Text text="{Info_5_Model>changed_on}" />
+                        <Text text="{Info_5_Model>change_time}" />
+                        <Text text="{Info_5_Model>actual_message_issued_date}" />
+                        
+
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </ScrollContainer>
+    </VBox>
+</core:FragmentDefinition>

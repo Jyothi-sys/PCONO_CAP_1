@@ -1,0 +1,1 @@
+using salesorder_Srv as service from '../../srv/main-srv';

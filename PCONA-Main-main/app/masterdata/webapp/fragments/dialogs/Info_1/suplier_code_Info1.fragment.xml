@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>suplier_code}"
+  liveChange="onSearchSupplierCode_Info1"
+  confirm="onSelectionSupplierCode_Info1"
+  cancel="onDialogClose_Info1"
+  multiSelect="true"
+  items="{suplier_codeInfo1Data>/}">
+
+<StandardListItem 
+
+title="{path: 'suplier_codeInfo1Data>suplier_code'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

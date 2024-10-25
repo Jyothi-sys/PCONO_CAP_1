@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Company_Class}"
+  liveChange="onSearchcompany_class_TrpPart"
+  confirm="onSelectioncompany_class_TrpPart"
+  cancel="onDialogClose_trdPart"
+  multiSelect="true"
+  items="{company_classTrdPartData>/}">
+
+<StandardListItem 
+
+title="{path: 'company_classTrdPartData>company_class'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

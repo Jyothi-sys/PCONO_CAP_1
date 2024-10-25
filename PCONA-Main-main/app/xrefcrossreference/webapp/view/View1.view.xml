@@ -1,0 +1,345 @@
+<mvc:View controllerName="xrefcrossreference.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:ff="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+    
+    <Page id="page" title="{i18n>title}">
+                <fb:FilterBar
+                        id="filterbar"
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                        search="onGoToReport"
+                        showClearOnFB="true"
+                        clear="onPressClear"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                    >
+                        <fb:filterGroupItems>
+                         <fb:FilterGroupItem
+                                name="PLANT"
+                                label="{i18n>Plant}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Plant"
+                                        showValueHelp="true"
+                                        required="false"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenPlantFragment"
+                                        placeholder="{i18n>Plant}"
+                                        tokenUpdate="onTokenPlantChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            
+
+                            <fb:FilterGroupItem
+                                name="COMPANYCODE"
+                                label="{i18n>CompanyCode}"
+                                groupName="Group1"
+                                visibleInFilterBar="true" 
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Companycode"
+                                        required="false"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenComapnyCodeFragment"
+                                        placeholder="{i18n>CompanyCode}"
+                                        tokenUpdate="onTokenCompanyCodeChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="dc"
+                                label="{i18n>dc}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                <MultiInput
+                                        id="id_Dc"
+                                        required="false"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpendcFragment"
+                                        placeholder="{i18n>dc}"
+                                        tokenUpdate="onTokenDcChange"
+                                    />                              
+                                    
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                           
+
+                            <fb:FilterGroupItem
+                                name="warehouse_hwy905"
+                                label="{i18n>warehouse_hwy905}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Warehouse"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenWarehouseFragment"
+                                        placeholder="{i18n>warehouse_hwy905}"
+                                        tokenUpdate="onTokenWarehouseChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="partner_id"
+                                label="{i18n>partner_id}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <MultiInput
+                                        id="id_Partner"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenPartneridFragment"
+                                        placeholder="{i18n>partner_id}"
+                                        tokenUpdate="onTokenPartneridChange"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="zone"
+                                label="{i18n>zone}"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                <MultiInput
+                                        id="id_Zone"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest="onOpenzoneFragment"
+                                        placeholder="{i18n>zone}"
+                                        tokenUpdate="onTokenzoneChange"
+                                    />                                    
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+
+                    <content>
+                        <Table
+                            alternateRowColors="true"
+                            backgroundDesign="Solid"
+                            mode="MultiSelect"
+                            selectionChange="onselectionChange"
+                            sticky="ColumnHeaders"
+                            headerText="Header Toolbar"
+                            items="{readModel>/}"
+                            autoPopinMode="false"
+                            contextualWidth="Auto"
+                            id="exportTable"
+                            inset="false"
+                            growing="true"
+                            growingThreshold="20"
+                            growingScrollToLoad="false"
+                        >
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <ToolbarSpacer />
+                                    
+                                    <Button                                        
+                                        text ="Create"
+                                        press="onCreate"
+                                    />
+                                    <Button                                        
+                                        text ="Delete"
+                                        press="onDelete"
+                                        id ="deleteButton"
+                                    />
+                                    <Button                                        
+                                        text ="Edit"
+                                        press="onEdit"
+                                        id="editModeButton"
+                                    />                                   
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+
+                                    <Column
+                                    visible="{columnModel>/colVisible1}"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>Plant}"
+                                    />
+                                </Column>
+                                
+                                <Column
+                                    visible="{columnModel>/colVisible2}"
+                                    
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        wrapping="true"
+                                        text="{i18n>CompanyCode}"
+                                    />
+                                </Column>
+                                <Column
+                                    visible="{columnModel>/colVisible3}"
+                                    minScreenWidth="Tablet"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>dc}"
+                                    />
+                                </Column>
+                                 
+                                <Column
+                                    visible="{columnModel>/colVisible4}"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>warehouse_hwy905}"
+                                    />
+                                </Column>
+                                <Column
+                                    visible="{columnModel>/colVisible5}"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>partner_id}"
+                                        wrapping="true"
+                                    />
+                                </Column>
+                                <Column
+                                    visible="{columnModel>/colVisible6}"
+                                    popinDisplay="Block"
+                                    demandPopin="true"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Label
+                                        design="Bold"
+                                        text="{i18n>zone}"
+                                        wrapping="true"
+                                    />
+                                </Column>                             
+                               </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+
+                                        <Text text="{readModel>plant}" />                                       
+
+                                        <Text text="{readModel>companycode}" />
+                                        
+                                        <Text
+                                            text="{readModel>dc}"/>
+                                        
+                                        <Text text="{readModel>warehouse_hwy905}" />
+                                        
+                                        <Text
+                                            text="{readModel>partner_id}"
+                                        />
+                                        
+                                        <Text
+                                            text="{readModel>zone}"
+                                        />
+                                                                      
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content> 
+                    <dependents> 
+                    <Dialog id="OpenDialog" title="Create ProductsTable"> 
+        <buttons> 
+        <Button id="saveButton" text="Save" press="onSave" type="Emphasized" /> 
+        <!-- <Button id="submitButton" text="submit" press="onSubmitEditData" type="Emphasized" />  -->
+        <Button id="cancelCreate" text="Cancel" press="onCancel" type="Transparent" /> </buttons>
+         <f:SimpleForm editable="true" layout="ResponsiveGridLayout"> 
+         <f:content> 
+         <Label text="PLANT" required="false"/> 
+         <Input id="idPlant" editable="true" /> 
+         <Label text="COMPANYCODE" required="false"/> 
+         <Input id="idCompCode"  editable="true"  />
+         <Label text="DC"  /> 
+         <Input id="idDc" editable="true"/>          
+         <Label text="WAREHOUSE_HWY905" /> 
+         <Input id="idWarehouse" editable="true" /> 
+         <Label text="PARTNER_ID" /> 
+         <Input id="idPartner" editable="true"   /> 
+         <Label text="ZONE" /> 
+         <Input id="idZone" editable="true" /> 
+         
+         </f:content> 
+         </f:SimpleForm> 
+         </Dialog>
+
+
+         <Dialog id="OpenDialog1" >
+            <content> 
+        
+         <f:SimpleForm editable="true" layout="ResponsiveGridLayout"> 
+         <f:content> 
+         <Label text="PLANT" required="true"/> 
+         <Input id="idPlant1" value="{readModel>/plant}" editable="true" /> 
+         <Label text="COMPANYCODE" required="true"/> 
+         <Input id="idCompCode1" value="{readModel>/companycode}"  editable="true"/>
+         <Label text="DC"/> 
+         <Input id="idDc1" value="{readModel>/dc}" editable="true"/>          
+         <Label text="WAREHOUSE_HWY905" /> 
+         <Input id="idWarehouse1" value="{readModel>/warehouse_hwy905}" editable="true" /> 
+         <Label text="PARTNER_ID" /> 
+         <Input id="idPartner1" value="{readModel>/partner_id}" editable="true"   /> 
+         <Label text="ZONE" /> 
+         <Input id="idZone1" value="{readModel>/zone}" editable="true" /> 
+         
+         </f:content> 
+         </f:SimpleForm> 
+         </content>
+         <footer>
+                 <OverflowToolbar >
+            <ToolbarSpacer ></ToolbarSpacer>
+                   
+        <Button id="idSubmit" text="Update" press="onUpdate" type="Transparent" /> 
+        </OverflowToolbar>
+    </footer>
+</Dialog>
+    </dependents> 
+            </Page>
+            </pages>
+        </App>
+    </Shell>                 
+</mvc:View>
+ 
+

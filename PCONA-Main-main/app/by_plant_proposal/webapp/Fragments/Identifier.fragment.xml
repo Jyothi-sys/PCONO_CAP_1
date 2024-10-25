@@ -1,0 +1,25 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+
+
+  <SelectDialog  
+  noDataText="{i18n>NoDataFound}"
+  title="{i18n>Identifier}"
+  liveChange="onSearchIdentifier"
+  confirm="onSelectionIdentifier"
+  cancel="onDialogClose"
+  multiSelect="true"
+  items="{IdentifierData>/}">
+
+<StandardListItem 
+
+title="{path: 'IdentifierData>Identifier'}"
+iconDensityAware="false"
+iconInset="false"
+type="Active" />
+
+
+</SelectDialog >
+</c:FragmentDefinition>
+

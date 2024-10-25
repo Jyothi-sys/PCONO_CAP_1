@@ -1,0 +1,19 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem text="{i18n>RuleID}" key="Identifier" />
+			<ViewSettingsItem text="{i18n>Customer}" key="Customer" />
+			<ViewSettingsItem text="{i18n>Delgroup}" key="Group" />
+			<ViewSettingsItem text="{i18n>ShipPlant}" key="ShipPlant" />
+			<ViewSettingsItem text="{i18n>Days}" key="Days" />
+			<ViewSettingsItem text="{i18n>CreatedBy}" key="created_by" />
+			<ViewSettingsItem text="{i18n>CreatedOn}" key="created_on" />
+			<ViewSettingsItem text="{i18n>changedBy}" key="changed_by" />
+			<ViewSettingsItem text="{i18n>changedOn}" key="changed_on" />
+			
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
